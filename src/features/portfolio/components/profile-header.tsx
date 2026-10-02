@@ -1,3 +1,4 @@
+import { ArabicStar } from "@/components/arabic-star"
 import { USER } from "@/features/portfolio/data/user"
 
 import { FlipSentences } from "./flip-sentences"
@@ -11,13 +12,19 @@ export function ProfileHeader() {
       {/* Top Architectural Dossier Header Ribbon */}
       <div className="col-span-2 flex flex-wrap items-center justify-between gap-2 border-b border-line bg-muted/20 px-3 py-1.5 font-mono text-[9px] tracking-wider text-muted-foreground uppercase min-[380px]:px-4">
         <span className="flex items-center gap-1.5 font-medium text-foreground/80">
-          <span className="size-1 rounded-full bg-foreground/60" />
+          <ArabicStar className="size-2.5 text-muted-foreground/70" />
           DOSSIER // FU&apos;AYD
         </span>
         <span className="hidden min-[480px]:inline">
           ADDIS ABABA (9°01&apos;N 38°44&apos;E) • GMT+3
         </span>
-        <span>INDEX // 2026.1</span>
+        <span className="flex items-center gap-1.5">
+          <span className="font-arabic font-bold text-foreground/80">
+            سِجِلّ
+          </span>
+          <span className="text-muted-foreground/40">•</span>
+          <span>INDEX // 2026.1</span>
+        </span>
       </div>
 
       <figure className="relative col-span-2 flex min-h-[230px] w-full items-center justify-center overflow-hidden border-b border-line sm:col-span-1 sm:col-start-1 sm:row-start-2 sm:min-h-[290px] sm:border-r sm:border-b-0">

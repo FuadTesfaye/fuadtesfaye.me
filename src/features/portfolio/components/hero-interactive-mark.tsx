@@ -42,20 +42,36 @@ export function HeroInteractiveMark() {
             id={hatchPatternId}
             x="0"
             y="0"
-            width="16"
-            height="16"
+            width="24"
+            height="24"
             patternUnits="userSpaceOnUse"
           >
             <g
               fill="none"
               stroke="var(--stroke)"
               strokeWidth="0.75"
-              strokeOpacity="0.35"
+              strokeOpacity="0.38"
             >
-              <path d="M8 2 L14 8 L8 14 L2 8 Z" />
-              <rect x="4" y="4" width="8" height="8" />
-              <circle cx="8" cy="8" r="1.5" />
-              <path d="M0 0 L4 4 M12 4 L16 0 M12 12 L16 16 M0 16 L4 12" />
+              {/* Center 8-pointed star */}
+              <rect x="7" y="7" width="10" height="10" />
+              <rect
+                x="7"
+                y="7"
+                width="10"
+                height="10"
+                transform="rotate(45 12 12)"
+              />
+              <circle cx="12" cy="12" r="2" />
+              {/* Corner quarter-stars */}
+              <circle cx="0" cy="0" r="2" />
+              <circle cx="24" cy="0" r="2" />
+              <circle cx="24" cy="24" r="2" />
+              <circle cx="0" cy="24" r="2" />
+              {/* Interlacing connecting diagonals */}
+              <line x1="0" y1="0" x2="6" y2="6" />
+              <line x1="24" y1="0" x2="18" y2="6" />
+              <line x1="24" y1="24" x2="18" y2="18" />
+              <line x1="0" y1="24" x2="6" y2="18" />
             </g>
           </pattern>
         </defs>

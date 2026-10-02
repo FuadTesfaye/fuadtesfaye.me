@@ -33,7 +33,7 @@ export function SiteBottomNav() {
   return (
     <div
       className={cn(
-        "fixed! bottom-[calc(--spacing(2)+env(safe-area-inset-bottom,0))] left-1/2 z-50 flex w-fit -translate-x-1/2 items-center rounded-full border border-line/80 bg-background/80 py-1 pr-1 pl-3 shadow-lg ring-1 ring-foreground/10 backdrop-blur-md sm:hidden dark:bg-background/70 dark:ring-foreground/15",
+        "fixed! bottom-[calc(--spacing(2)+env(safe-area-inset-bottom,0))] left-1/2 z-50 flex w-fit -translate-x-1/2 items-center rounded-none border border-line bg-background/90 py-1 pr-1 pl-3 shadow-lg backdrop-blur-md sm:hidden dark:bg-background/85",
         "*:data-[slot=command-menu-trigger]:min-w-20 *:data-[slot=command-menu-trigger]:gap-2 *:data-[slot=command-menu-trigger]:rounded-none *:data-[slot=command-menu-trigger]:border-none *:data-[slot=command-menu-trigger]:bg-transparent *:data-[slot=command-menu-trigger]:px-0 *:data-[slot=command-menu-trigger]:hover:bg-transparent *:data-[slot=command-menu-trigger]:active:scale-none"
       )}
     >

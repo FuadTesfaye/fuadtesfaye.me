@@ -145,7 +145,7 @@ export default function Page() {
           <RegistryCommandAnimated />
         </div>
 
-        <div className="stripe-divider" />
+        <div className="stripe-divider-mashrabiya" />
 
         <div className="screen-line-bottom h-px" />
 

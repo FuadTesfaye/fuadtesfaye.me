@@ -27,7 +27,7 @@ export default function BlocksLayout({
       <BlocksNav />
 
       <div className="screen-line-top screen-line-bottom screen-line-top-border before:z-1">
-        <div className="stripe-divider" />
+        <div className="stripe-divider-muqarnas" />
       </div>
 
       {children}

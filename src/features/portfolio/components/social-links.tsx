@@ -7,6 +7,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import { ArabicStar } from "@/components/arabic-star"
 import {
   HandwrittenArrow,
   HandwrittenNote,
@@ -20,7 +21,7 @@ export function SocialLinks() {
     <Panel className="screen-line-bottom-line">
       <h2 className="sr-only">Social links</h2>
 
-      <PanelContent>
+      <PanelContent className="flex flex-wrap items-center justify-between gap-3">
         <ul className="flex flex-wrap gap-2">
           {SOCIAL_LINKS.map((item) => (
             <li key={item.name}>
@@ -52,6 +53,16 @@ export function SocialLinks() {
             </li>
           ))}
         </ul>
+
+        <div className="hidden items-center gap-2 border border-line bg-muted/20 px-3 py-1 font-mono text-[9px] tracking-widest text-muted-foreground select-none sm:flex">
+          <ArabicStar className="size-3 text-muted-foreground/70" />
+          <span className="font-arabic text-xs font-bold text-foreground/85">
+            تَواصُل
+          </span>
+          <span className="text-muted-foreground/40">•</span>
+          <span className="uppercase">NETWORK // ACTIVE</span>
+          <ArabicStar className="size-3 text-muted-foreground/50" />
+        </div>
       </PanelContent>
 
       <HandwrittenNote className="-top-4 right-full mr-4 hidden w-28 flex-col items-end lg:flex">

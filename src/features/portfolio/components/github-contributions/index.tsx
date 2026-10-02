@@ -10,7 +10,7 @@ export async function GitHubContributions() {
     <Panel className="screen-line-top-border">
       <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-1.5 font-mono text-[9px] tracking-widest text-muted-foreground uppercase">
         <span>SECTION // 02</span>
-        <span>ENGINEERING CADENCE</span>
+        <span>إيقاع • ENGINEERING CADENCE</span>
         <span>CADENCE // LAST 365 DAYS</span>
       </div>
       <h2 className="sr-only">GitHub contributions</h2>

@@ -120,7 +120,7 @@ export default function Page() {
         </Suspense>
 
         <div className="screen-line-top screen-line-bottom screen-line-top-border before:z-1">
-          <div className="stripe-divider" />
+          <div className="stripe-divider-zellij" />
         </div>
 
         <Suspense fallback={<BookmarkList entries={entries} />}>

@@ -6,6 +6,7 @@ import { CARBON_ADS } from "@/config/ads"
 import { JSON_LD_ID } from "@/config/json-ld"
 import { JsonLdScript } from "@/lib/json-ld"
 import { absoluteUrl, cn } from "@/lib/utils"
+import { ArabicStar } from "@/components/arabic-star"
 import { FloatingCarbonAds } from "@/components/floating-carbon-ads"
 // import { Blocks } from "@/features/portfolio/components/blocks"
 // import { Blog } from "@/features/portfolio/components/blog"
@@ -41,20 +42,20 @@ export default function HomePage() {
       <JsonLdScript data={getProfilePageJsonLd()} />
       {CARBON_ADS && <FloatingCarbonAds />}
 
-      <div className="[--separator-height:--spacing(8)] **:data-[slot=panel]:scroll-mt-[calc(var(--header-height)+var(--separator-height))]">
+      <div className="[--separator-height:--spacing(10)] **:data-[slot=panel]:scroll-mt-[calc(var(--header-height)+var(--separator-height))]">
         <div className="mx-auto md:max-w-4xl">
           <ProfileHeader />
-          <Separator />
+          <Separator pattern="girih" arabic="فُؤَيْد" latin="DOSSIER" />
 
           <SocialLinks />
           <Overview />
           <GitHubContributions />
-          <Separator />
+          <Separator pattern="kufic" arabic="إتقان" latin="CADENCE" />
 
           <Hello />
           {/* <SponsorsCarousel /> */}
           {/* <Testimonials /> */}
-          <Separator />
+          <Separator pattern="mashrabiya" arabic="فلسفة" latin="PHILOSOPHY" />
 
           {/* <Components /> */}
           {/* <Separator /> */}
@@ -66,16 +67,16 @@ export default function HomePage() {
           {/* <Separator /> */}
 
           <TechStack />
-          <Separator />
+          <Separator pattern="shamsa" arabic="كفاءة" latin="ARSENAL" />
 
           <Experiences />
-          <Separator />
+          <Separator pattern="muqarnas" arabic="مسيرة" latin="CHRONOLOGY" />
 
           <Education />
-          <Separator />
+          <Separator pattern="zellij" arabic="معارف" latin="ACADEMIA" />
 
           <Projects />
-          {/* <Separator /> */}
+          <Separator pattern="arabesque" arabic="إنجاز" latin="WORKS" />
 
           {/* <Recognition /> */}
           {/* <Separator /> */}
@@ -105,22 +106,82 @@ function getProfilePageJsonLd(): WithContext<ProfilePage> {
   }
 }
 
-function Separator({ className }: { className?: string }) {
+type SeparatorPattern =
+  | "girih"
+  | "kufic"
+  | "mashrabiya"
+  | "shamsa"
+  | "muqarnas"
+  | "zellij"
+  | "arabesque"
+  | "frieze"
+
+type SeparatorProps = {
+  className?: string
+  arabic?: string
+  latin?: string
+  pattern?: SeparatorPattern
+}
+
+const PATTERN_CLASS_MAP: Record<SeparatorPattern, string> = {
+  girih: "stripe-divider-girih",
+  kufic: "stripe-divider-kufic",
+  mashrabiya: "stripe-divider-mashrabiya",
+  shamsa: "stripe-divider-shamsa",
+  muqarnas: "stripe-divider-muqarnas",
+  zellij: "stripe-divider-zellij",
+  arabesque: "stripe-divider-arabesque",
+  frieze: "stripe-divider-frieze",
+}
+
+function Separator({
+  className,
+  arabic,
+  latin,
+  pattern = "girih",
+}: SeparatorProps) {
+  const patternClass = PATTERN_CLASS_MAP[pattern] ?? "stripe-divider"
+
   return (
     <div
       className={cn(
-        "stripe-divider h-(--separator-height) w-full border-x",
+        patternClass,
+        "relative flex h-(--separator-height) w-full items-center justify-center border-x border-line",
         className
       )}
     >
-      {/* <div
-        className="absolute -top-1.25 -left-1.25 z-2 flex size-2.25 border bg-background"
-        aria-hidden
-      />
+      {/* Precision corner crosshair datum marks */}
       <div
-        className="absolute -top-1.25 -right-1.25 z-2 flex size-2.25 border bg-background"
+        className="pointer-events-none absolute -top-1.5 -left-1.5 z-2 flex size-3 items-center justify-center font-mono text-[9px] text-muted-foreground/45 select-none"
         aria-hidden
-      /> */}
+      >
+        +
+      </div>
+      <div
+        className="pointer-events-none absolute -top-1.5 -right-1.5 z-2 flex size-3 items-center justify-center font-mono text-[9px] text-muted-foreground/45 select-none"
+        aria-hidden
+      >
+        +
+      </div>
+
+      {/* Architectural center seal / medallion */}
+      {arabic && (
+        <div className="z-1 flex items-center gap-2 border border-line bg-background/95 px-3 py-0.5 shadow-2xs backdrop-blur-xs select-none">
+          <ArabicStar className="size-3 text-muted-foreground/80" />
+          <span className="font-arabic text-xs font-bold tracking-normal text-foreground/90">
+            {arabic}
+          </span>
+          {latin && (
+            <>
+              <span className="text-[10px] text-muted-foreground/40">•</span>
+              <span className="font-mono text-[9px] font-medium tracking-widest text-muted-foreground uppercase">
+                {latin}
+              </span>
+            </>
+          )}
+          <ArabicStar className="size-3 text-muted-foreground/50" />
+        </div>
+      )}
     </div>
   )
 }

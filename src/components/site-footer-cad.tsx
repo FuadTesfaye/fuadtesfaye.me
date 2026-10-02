@@ -5,6 +5,7 @@ import type { BuildInfo } from "@/lib/build-info"
 import { getBuildInfo, getStack } from "@/lib/build-info"
 import { cn } from "@/lib/utils"
 import { Separator } from "@/components/ui/separator"
+import { ArabicStar } from "@/components/arabic-star"
 import { DmcaIcon, GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons"
 import { SiteFooterInteractiveLogotype } from "@/components/site-footer-brand"
 import { SOCIAL } from "@/features/portfolio/data/social-links"
@@ -48,13 +49,25 @@ export function SiteFooterCad() {
     <footer className="max-w-screen overflow-x-clip px-2">
       <div className="mx-auto border-x group-has-data-[slot=layout-wide]/layout:container md:max-w-4xl">
         <div className="screen-line-top screen-line-bottom screen-line-top-border before:z-1">
-          <div className="stripe-divider h-12" />
+          <div className="stripe-divider-frieze relative flex h-12 items-center justify-center">
+            <div className="z-1 flex items-center gap-2 border border-line bg-background/95 px-3 py-1 shadow-2xs backdrop-blur-xs select-none">
+              <ArabicStar className="size-3.5 text-muted-foreground/80" />
+              <span className="font-arabic text-xs font-bold tracking-normal text-foreground/90">
+                خاتمة
+              </span>
+              <span className="text-[10px] text-muted-foreground/40">•</span>
+              <span className="font-mono text-[9px] font-medium tracking-widest text-muted-foreground uppercase">
+                COLOPHON // 2026
+              </span>
+              <ArabicStar className="size-3.5 text-muted-foreground/50" />
+            </div>
+          </div>
         </div>
 
         <div className="relative">
           <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-1.5 font-mono text-[9px] tracking-widest text-muted-foreground uppercase">
             <span>COLOPHON // 2026</span>
-            <span>ARCHITECTURAL SPECIFICATION</span>
+            <span>خاتمة • ARCHITECTURAL SPECIFICATION</span>
             <span>fuadtesfaye.me</span>
           </div>
 

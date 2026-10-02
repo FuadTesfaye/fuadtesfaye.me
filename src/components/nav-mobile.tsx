@@ -36,7 +36,7 @@ export function NavMobile({ items }: { items: NavItem<Route>[] }) {
       <PopoverTrigger render={<NavMobileTrigger />} />
 
       <PopoverContent
-        className="w-48 rounded-xl p-1"
+        className="w-48 rounded-none border border-line p-1 shadow-lg"
         side="top"
         align="center"
         sideOffset={8}
@@ -55,7 +55,7 @@ export function NavMobile({ items }: { items: NavItem<Route>[] }) {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className="flex items-center justify-between rounded-lg px-3 py-2 font-heading text-xs tracking-wider uppercase transition-colors aria-[current=page]:bg-accent aria-[current=page]:text-foreground"
+                className="flex items-center justify-between rounded-none px-3 py-2 font-heading text-xs tracking-wider uppercase transition-colors aria-[current=page]:bg-accent aria-[current=page]:text-foreground"
                 onClick={() => handleOpenChange(false)}
               >
                 <span>{link.title}</span>

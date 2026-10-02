@@ -11,6 +11,16 @@ export function SiteFooterInteractiveLogotype() {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
+            {/* Arabic Calligraphy watermark background */}
+            <text
+              x="705"
+              y="170"
+              textAnchor="middle"
+              className="pointer-events-none fill-foreground/[0.035] font-arabic text-[180px] font-bold select-none dark:fill-foreground/4.5"
+            >
+              فُؤَيْد
+            </text>
+
             <text
               x="705"
               y="195"

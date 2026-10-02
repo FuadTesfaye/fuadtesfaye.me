@@ -68,7 +68,7 @@ export function Nav({
     <nav
       data-active-id={activeId}
       className={cn(
-        "relative flex items-center gap-0.5 rounded-full border border-line/70 bg-card/60 p-1 shadow-2xs backdrop-blur-md dark:bg-card/40",
+        "relative flex items-center gap-0.5 rounded-none border border-line bg-muted/25 p-0.5 shadow-none backdrop-blur-md dark:bg-muted/15",
         className
       )}
       onMouseLeave={() => setHoveredIndex(null)}
@@ -113,7 +113,7 @@ export function Nav({
             onMouseEnter={() => setHoveredIndex(index)}
             onClick={handleClick}
             className={cn(
-              "group relative flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs transition-colors outline-none",
+              "group relative flex items-center gap-1.5 rounded-none px-2.5 py-1 text-xs transition-colors outline-none",
               isActive
                 ? "font-semibold text-foreground"
                 : "text-muted-foreground hover:text-foreground"
@@ -123,7 +123,7 @@ export function Nav({
             {isHovered && (
               <motion.span
                 layoutId="nav-hover-pill"
-                className="absolute inset-0 rounded-full bg-foreground/6 dark:bg-foreground/10"
+                className="absolute inset-0 rounded-none bg-foreground/6 dark:bg-foreground/10"
                 transition={{ type: "spring", stiffness: 380, damping: 30 }}
               />
             )}
@@ -132,7 +132,7 @@ export function Nav({
             {isActive && !isHovered && (
               <motion.span
                 layoutId="nav-active-pill"
-                className="absolute inset-0 rounded-full border border-foreground/15 bg-foreground/8 shadow-xs dark:border-foreground/20 dark:bg-foreground/12"
+                className="absolute inset-0 rounded-none border border-foreground/20 bg-foreground/8 shadow-none dark:border-foreground/25 dark:bg-foreground/12"
                 transition={{ type: "spring", stiffness: 380, damping: 30 }}
               />
             )}

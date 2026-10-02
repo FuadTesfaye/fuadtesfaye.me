@@ -15,8 +15,8 @@ export function Education() {
   return (
     <Panel id={ID}>
       <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-1.5 font-mono text-[9px] tracking-widest text-muted-foreground uppercase">
-        <span>SECTION // 07</span>
-        <span>ACADEMIC FOUNDATION</span>
+        <span>SECTION // 06</span>
+        <span>معارف • ACADEMIC FOUNDATION</span>
         <span>INDEX // CREDENTIALS</span>
       </div>
 

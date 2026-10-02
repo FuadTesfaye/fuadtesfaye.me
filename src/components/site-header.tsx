@@ -48,8 +48,8 @@ export function SiteHeader() {
             <span className="font-name text-lg font-normal tracking-wide text-foreground transition-colors group-hover:text-foreground/80">
               Fuad
             </span>
-            <span className="hidden items-center gap-1.5 rounded-full border border-line bg-muted/50 px-2 py-0.5 font-mono text-[9px] font-medium tracking-widest text-muted-foreground uppercase sm:inline-flex">
-              <span className="size-1.25 rounded-full bg-foreground/60" />
+            <span className="hidden items-center gap-1.5 rounded-none border border-line bg-muted/30 px-2 py-0.5 font-mono text-[9px] font-medium tracking-widest text-muted-foreground uppercase sm:inline-flex">
+              <span className="size-1 bg-foreground/60" />
               CTO @ ZION
             </span>
           </div>
@@ -59,7 +59,7 @@ export function SiteHeader() {
 
         <NavDesktop items={MAIN_NAV} />
 
-        <div className="flex items-center max-sm:*:data-[slot=command-menu-trigger]:hidden">
+        <div className="flex items-center **:data-[slot=button]:rounded-none max-sm:*:data-[slot=command-menu-trigger]:hidden">
           <Separator
             orientation="vertical"
             className="mr-1.5 opacity-60 max-sm:hidden data-vertical:h-4 data-vertical:self-center"
