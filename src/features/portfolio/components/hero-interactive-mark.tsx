@@ -148,7 +148,7 @@ export function HeroInteractiveMark() {
           y="36"
           className="fill-muted-foreground/70 font-mono text-[9px] tracking-widest uppercase"
         >
-          SYS // FU&apos;ĀD (فؤاد) • v2.6
+          SYS // FU&apos;AYD (فُؤَيْد) • v2.6
         </text>
         <text
           x="494"
@@ -233,7 +233,7 @@ export function HeroInteractiveMark() {
             opacity="0.7"
           />
 
-          {/* Center Brand Emblem: Arabic Calligraphy Fuad (فُؤَاد) */}
+          {/* Center Brand Emblem: Arabic Calligraphy Fuayd (فُؤَيْد) */}
           <g className="pointer-events-none select-none">
             <text
               x="260"
@@ -245,7 +245,7 @@ export function HeroInteractiveMark() {
                   "drop-shadow(0 2px 10px color-mix(in oklab, var(--foreground) 25%, transparent))",
               }}
             >
-              فُـؤَاد
+              فُؤَيْد
             </text>
             <text
               x="260"
@@ -253,7 +253,7 @@ export function HeroInteractiveMark() {
               textAnchor="middle"
               className="fill-muted-foreground/80 font-mono text-[9px] tracking-[0.22em] uppercase select-none"
             >
-              {"FU'ĀD // HEART & INTELLECT"}
+              {"FU'AYD // HEART & INTELLECT"}
             </text>
           </g>
 
@@ -282,9 +282,9 @@ export function HeroInteractiveMark() {
         className="right-4 bottom-3 hidden w-36 flex-col items-end pointer-fine:md:flex"
         aria-hidden
       >
-        <span className="-rotate-6 font-cursive text-2xl text-muted-foreground">
+        <span className="-rotate-6 font-cursive text-3xl text-muted-foreground">
           tactile switch
-          <span className="block text-lg opacity-85">click for sound</span>
+          <span className="block text-xl opacity-85">click for sound</span>
         </span>
         <HandwrittenArrow className="translate-x-2 -scale-x-100 -rotate-12" />
       </HandwrittenNote>

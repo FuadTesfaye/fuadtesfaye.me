@@ -55,7 +55,7 @@ export function SocialLinks() {
       </PanelContent>
 
       <HandwrittenNote className="-top-4 right-full mr-4 hidden w-28 flex-col items-end lg:flex">
-        <span className="-rotate-6 font-cursive text-2xl select-none">
+        <span className="-rotate-6 font-cursive text-3xl select-none">
           follow me
         </span>
         <HandwrittenArrow className="size-7 translate-x-3 -scale-x-100 -rotate-6" />

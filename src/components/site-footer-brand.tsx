@@ -52,15 +52,16 @@ export function SiteFooterInteractiveLogotype() {
           >
             <text
               x="705"
-              y="190"
+              y="180"
               textAnchor="middle"
-              className="font-heading text-[210px] font-extrabold tracking-[0.18em] uppercase select-none"
+              className="font-cursive text-[260px] tracking-normal select-none"
+              style={{ fontFamily: "var(--font-cursive)" }}
               fill="url(#paint0_linear_1145_73)"
               stroke="var(--foreground)"
-              strokeOpacity="0.18"
-              strokeWidth="2"
+              strokeOpacity="0.25"
+              strokeWidth="1.5"
             >
-              FUAD
+              Fuad
             </text>
             <defs>
               <motion.linearGradient

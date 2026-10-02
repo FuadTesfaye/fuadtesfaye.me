@@ -1,4 +1,4 @@
-import { Great_Vibes, IBM_Plex_Serif, Reem_Kufi, Syne } from "next/font/google"
+import { Aldrich, IBM_Plex_Serif, Mea_Culpa, Reem_Kufi } from "next/font/google"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
 
@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils"
 const fontSans = GeistSans
 const fontMono = GeistMono
 
-const fontHeading = Syne({
-  weight: ["500", "600", "700"],
+const fontHeading = Aldrich({
+  weight: ["400"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-heading-unique",
@@ -28,7 +28,7 @@ const fontSerif = IBM_Plex_Serif({
   variable: "--font-serif",
 })
 
-const fontCursive = Great_Vibes({
+const fontCursive = Mea_Culpa({
   weight: ["400"],
   subsets: ["latin"],
   display: "swap",
@@ -67,5 +67,6 @@ export const fontVariables = cn(
   "[--font-sans:var(--font-geist-sans)]",
   "[--font-mono:var(--font-geist-mono)]",
   "[--font-heading:var(--font-heading-unique)]",
-  "[--font-arabic:var(--font-arabic)]"
+  "[--font-arabic:var(--font-arabic)]",
+  "[--font-cursive:var(--font-handwritten)]"
 )
