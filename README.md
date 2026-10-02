@@ -1,313 +1,121 @@
-<!-- # [fuadtesfaye.me](https://www.fuadtesfaye.me) -->
+# [fuadtesfaye.me](https://www.fuadtesfaye.me)
 
-A pixel-perfect portfolio showcasing my work as a Full-Stack Software Engineer & AI Automation Developer.
+Personal portfolio, developer dossier, and showcase for Fuad Tesfaye — Full-Stack Software Engineer and AI Automation Developer.
 
-→ Live site: [fuadtesfaye.me](https://www.fuadtesfaye.me)
+- Live site: [fuadtesfaye.me](https://www.fuadtesfaye.me)
+- Repository: [github.com/FuadTesfaye/fuadtesfaye.me](https://github.com/FuadTesfaye/fuadtesfaye.me)
 
 ## Overview
 
-### Stack
+A modern, high-performance portfolio engineered with Next.js 16 (App Router), React 19, and Tailwind CSS v4. Designed with an architectural minimalist aesthetic, tactile typography, interactive components, and responsive typography across all screen viewports.
 
-- Next.js 16
-- Tailwind CSS v4
-- shadcn/ui
+## Tech stack
 
-### Featured
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Library**: [React 19](https://react.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **UI primitives**: [shadcn/ui](https://ui.shadcn.com/) & [Base UI](https://base-ui.com/)
+- **Content**: MDX (centralized document layer)
+- **Testing**: [Vitest](https://vitest.dev/)
+- **Package manager**: pnpm (with Bun for build scripts)
+- **Deployment**: [Vercel](https://vercel.com/)
 
-- Clean & modern design
-- Light/Dark themes
-- vCard integration
-- SEO optimized ([JSON-LD schema](https://json-ld.org), sitemap, robots)
-- AI-ready with [/llms.txt](https://llmstxt.org)
-- Spam-protected email
-- Installable as PWA
-- Analytics with [OpenPanel](https://openpanel.dev)
+## Key features
 
-### Content
+- **Tactile UI and typography**: Custom typography pairings (Metamorphous, Unica One, Aldrich Cyber, Mea Culpa cursive) combined with an architectural monochrome aesthetic.
+- **Interactive telemetry**: Live GitHub contribution grid, system status telemetry, and responsive scroll-spy floating pill navigation.
+- **Light and dark modes**: Seamless theme transitions with custom CSS variables and meta theme support.
+- **Centralized MDX content**: Unified content system powering blog posts, component documentation, dynamic OG images, and RSS feeds.
+- **Component registry**: Built-in shadcn-compatible component and block registry distribution system.
+- **SEO and AI ready**: Full structured data with JSON-LD schemas, automated sitemaps, robots.txt, and [`/llms.txt`](https://llmstxt.org) documentation for AI agents.
+- **Privacy and anti-spam**: Base64-obfuscated contact telemetry and spam-resistant contact endpoints.
+- **PWA ready**: Installable progressive web application with customized web manifest and theme color integration.
 
-Centralized document system powered by MDX:
+## Getting started
 
-- Unified content layer for blog posts and component docs
-- Category-based content organization
-- Raw `.md` endpoints for AI readability
-- Syntax highlighting with code blocks
-- Dynamic OG images for rich link previews
-- RSS feed for content distribution
+### Prerequisites
 
-### Registry
+- [Node.js](https://nodejs.org/) (v20+ recommended)
+- [pnpm](https://pnpm.io/) (`corepack enable pnpm`)
+- [Bun](https://bun.sh/) (required for registry build scripts)
 
-Easily build and distribute reusable components, hooks, and pages using a custom registry powered by the [shadcn CLI](https://ui.shadcn.com/docs/cli).
+### Installation
 
-Each entry is well-documented and includes:
+1. Clone the repository:
 
-- Live preview & code snippets
-- Beautiful, readable code blocks
-- One-click command blocks (pnpm, npm, yarn, bun)
+   ```bash
+   git clone https://github.com/FuadTesfaye/fuadtesfaye.me.git
+   cd fuadtesfaye.me
+   ```
 
-## Development
+2. Install dependencies:
 
-Please refer to the [Development Guide](./DEVELOPMENT.md) for more details.
+   ```bash
+   pnpm install
+   ```
+
+3. Configure environment variables:
+
+   ```bash
+   cp .env.example .env.local
+   ```
+
+   Update the required environment variables inside `.env.local`.
+
+4. Start the local development server:
+
+   ```bash
+   pnpm dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) (or your configured local dev URL) in your browser.
+
+## Available scripts
+
+| Command                  | Description                                                          |
+| ------------------------ | -------------------------------------------------------------------- |
+| `pnpm dev`               | Starts the Next.js development server                                |
+| `pnpm build`             | Builds the component registry and compiles production Next.js output |
+| `pnpm start`             | Runs the compiled production server                                  |
+| `pnpm check-types`       | Executes TypeScript type checking via `tsc --noEmit`                 |
+| `pnpm lint`              | Runs ESLint analysis across the codebase                             |
+| `pnpm lint:fix`          | Runs ESLint and automatically fixes lint issues                      |
+| `pnpm format:write`      | Formats source files with Prettier                                   |
+| `pnpm test:run`          | Executes the Vitest test suite once                                  |
+| `pnpm registry:build`    | Generates registry JSON manifests and index files                    |
+| `pnpm registry:validate` | Validates shadcn registry compliance                                 |
+
+## Project structure
+
+| Path                      | Purpose                                                           |
+| ------------------------- | ----------------------------------------------------------------- |
+| `src/app/`                | Next.js App Router pages, layouts, and API routes                 |
+| `src/components/`         | Shared UI and architectural components                            |
+| `src/features/portfolio/` | Portfolio modules, user data, experiences, and projects           |
+| `src/features/doc/`       | MDX content layer, document collections, and parser utilities     |
+| `src/features/blog/`      | Blog views, post layout components, and reading time helpers      |
+| `src/registry/`           | Registry source for reusable components, blocks, and hooks        |
+| `src/config/`             | Site configurations, navigation metadata, and JSON-LD definitions |
+| `src/hooks/`              | Reusable React hooks                                              |
+| `src/lib/`                | Shared utility libraries and styling helpers                      |
+
+## Author
+
+**Fuad Tesfaye**
+
+- Role: Full-Stack Software Engineer & AI Automation Developer
+- Location: Addis Ababa, Ethiopia
+- Website: [fuadtesfaye.me](https://www.fuadtesfaye.me)
+- GitHub: [@FuadTesfaye](https://github.com/FuadTesfaye)
+- LinkedIn: [Fuad Tesfaye](https://www.linkedin.com/in/fuad-tesfaye/)
+- X: [@FuadTesfaye](https://x.com/FuadTesfaye)
+- Email: [fuadtesfaye@gmail.com](mailto:fuadtesfaye@gmail.com)
+
+## Acknowledgements
+
+Based on the open-source portfolio architecture created by [Chánh Đại](https://chanhdai.com).
 
 ## License
 
-Everything in this repository is licensed under the [MIT license](./LICENSE), with one exception: my name and my logo, which are covered by the [trademark and brand policy](./TRADEMARK.md).
-
-So the code and the writing are yours. Fork it, copy it, quote it, translate it. Just make sure to <ins>remove all my personal information</ins> and swap the branding before publishing your website. It's awesome to see my code being useful to someone!
-
-## Contributors
-
-<p>
-  <a href="https://github.com/ncdai/chanhdai.com/graphs/contributors"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/contributors/ncdai/chanhdai.com.svg?title=false&amp;size=48&amp;align=left&amp;mode=dark&amp;font=geist&amp;watermark=true" /><img alt="contributors" src="https://shieldcn.dev/contributors/ncdai/chanhdai.com.svg?title=false&amp;size=48&amp;align=left&amp;mode=light&amp;font=geist&amp;watermark=true" /></picture></a>
-</p>
-
-## Sponsors
-
-This project is proudly supported by:
-
-<table>
-  <tbody>
-    <tr>
-      <td colspan="3"><strong>Open Source Program</strong></td>
-    </tr>
-    <tr>
-      <td>
-        <a href="https://claude.com?utm_source=chanhdai.com">
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcset="https://assets.chanhdai.com/images/sponsors/claude-dark.svg"
-            />
-            <img
-              src="https://assets.chanhdai.com/images/sponsors/claude.svg"
-              alt="Claude"
-            />
-          </picture>
-        </a>
-      </td>
-      <td>
-        <a href="https://openpanel.dev/open-source?utm_source=chanhdai.com">
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcset="https://assets.chanhdai.com/images/sponsors/openpanel-dark.svg"
-            />
-            <img
-              src="https://assets.chanhdai.com/images/sponsors/openpanel.svg"
-              alt="OpenPanel"
-            />
-          </picture>
-        </a>
-      </td>
-      <td>
-        <a href="https://posthog.com/startups?utm_source=chanhdai.com">
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcset="https://assets.chanhdai.com/images/sponsors/posthog-dark.svg"
-            />
-            <img
-              src="https://assets.chanhdai.com/images/sponsors/posthog.svg"
-              alt="PostHog"
-            />
-          </picture>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3"><strong>Platinum Sponsors</strong></td>
-    </tr>
-    <tr>
-      <td>
-        <a href="https://www.nixtla.io?utm_source=chanhdai.com">
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcset="https://assets.chanhdai.com/images/sponsors/nixtla-dark.svg"
-            />
-            <img
-              src="https://assets.chanhdai.com/images/sponsors/nixtla.svg"
-              alt="Nixtla"
-            />
-          </picture>
-        </a>
-      </td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td colspan="3"><strong>Gold Sponsors</strong></td>
-    </tr>
-    <tr>
-      <td>
-        <a href="https://shadcnstudio.com?utm_source=chanhdai.com&utm_medium=banner&utm_campaign=github">
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcset="https://assets.chanhdai.com/images/sponsors/shadcnstudio-dark.svg"
-            />
-            <img
-              src="https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg"
-              alt="shadcnstudio.com"
-            />
-          </picture>
-        </a>
-      </td>
-      <td>
-        <a href="https://shadcnspace.com?utm_source=chanhdai.com">
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcset="https://assets.chanhdai.com/images/sponsors/shadcnspace-dark.svg"
-            />
-            <img
-              src="https://assets.chanhdai.com/images/sponsors/shadcnspace.svg"
-              alt="Shadcn Space"
-            />
-          </picture>
-        </a>
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <td colspan="3"><strong>Silver Sponsors</strong></td>
-    </tr>
-    <tr>
-      <td>
-        <a href="https://shadcncraft.com?utm_source=chanhdai.com">
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcset="https://assets.chanhdai.com/images/sponsors/shadcncraft-dark.svg"
-            />
-            <img
-              src="https://assets.chanhdai.com/images/sponsors/shadcncraft.svg"
-              alt="shadcncraft"
-            />
-          </picture>
-        </a>
-      </td>
-      <td>
-        <a href="https://www.shadcnblocks.com?utm_source=chanhdai.com">
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcset="https://assets.chanhdai.com/images/sponsors/shadcnblocks-dark.svg"
-            />
-            <img
-              src="https://assets.chanhdai.com/images/sponsors/shadcnblocks.svg"
-              alt="Shadcnblocks"
-            />
-          </picture>
-        </a>
-      </td>
-      <td>
-        <a href="https://reactbits.dev?utm_source=chanhdai.com">
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcset="https://assets.chanhdai.com/images/sponsors/reactbits-dark.svg"
-            />
-            <img
-              src="https://assets.chanhdai.com/images/sponsors/reactbits.svg"
-              alt="React Bits"
-            />
-          </picture>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a href="https://obelinf.com?utm_source=chanhdai.com">
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcset="https://assets.chanhdai.com/images/sponsors/obelinf-dark.svg"
-            />
-            <img
-              src="https://assets.chanhdai.com/images/sponsors/obelinf.svg"
-              alt="Obelinf"
-            />
-          </picture>
-        </a>
-      </td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td colspan="3"><strong>Spark Supporters</strong></td>
-    </tr>
-    <tr>
-      <td>
-        <a href="https://uirules.com?utm_source=chanhdai.com">
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcset="https://assets.chanhdai.com/images/sponsors/uirules-dark.svg"
-            />
-            <img
-              src="https://assets.chanhdai.com/images/sponsors/uirules.svg"
-              alt="UI Rules"
-            />
-          </picture>
-        </a>
-      </td>
-      <td>
-        <a href="https://shoogle.dev?utm_source=chanhdai.com">
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcset="https://assets.chanhdai.com/images/sponsors/shoogle-dark.svg"
-            />
-            <img
-              src="https://assets.chanhdai.com/images/sponsors/shoogle.svg"
-              alt="Shoogle"
-            />
-          </picture>
-        </a>
-      </td>
-      <td>
-        <a href="https://www.fonttrio.xyz?utm_source=chanhdai.com">
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcset="https://assets.chanhdai.com/images/sponsors/fonttrio-dark.svg"
-            />
-            <img
-              src="https://assets.chanhdai.com/images/sponsors/fonttrio.svg"
-              alt="Fonttrio"
-            />
-          </picture>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a href="https://github.com/AnukarOP">
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcset="https://assets.chanhdai.com/images/sponsors/anukar-dark.svg"
-            />
-            <img
-              src="https://assets.chanhdai.com/images/sponsors/anukar.svg"
-              alt="Anukar"
-            />
-          </picture>
-        </a>
-      </td>
-      <td align="center"><a href="https://github.com/raksalim">Raksa Lim</a></td>
-      <td align="center"><a href="https://lndev.me?utm_source=chanhdai.com">Leonel Ngoya</a></td>
-    </tr>
-    <tr>
-      <td align="center"><a href="https://github.com/fadymondy">Fady Mondy</a></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-
-> Found this project useful? [Sponsor me](https://github.com/sponsors/ncdai) to help with support and maintenance.
-
-## Stats
-
-![Stats](https://repobeats.axiom.co/api/embed/583bf08fbdef57c3921d3cfda902d546df3e6ed1.svg "Repobeats analytics image")
+This project is licensed under the [MIT License](./LICENSE).
