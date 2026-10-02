@@ -108,16 +108,21 @@ export function HeroInteractiveMark() {
             id={ids.hatchPattern}
             x="0"
             y="0"
-            width="8"
-            height="8"
+            width="16"
+            height="16"
             patternUnits="userSpaceOnUse"
           >
-            <path
-              d="M0 8L8 0M-2 2L2 -2M6 10L10 6"
+            <g
+              fill="none"
               stroke="var(--stroke)"
               strokeWidth="0.75"
-              strokeOpacity="0.3"
-            />
+              strokeOpacity="0.35"
+            >
+              <path d="M8 2 L14 8 L8 14 L2 8 Z" />
+              <rect x="4" y="4" width="8" height="8" />
+              <circle cx="8" cy="8" r="1.5" />
+              <path d="M0 0 L4 4 M12 4 L16 0 M12 12 L16 16 M0 16 L4 12" />
+            </g>
           </pattern>
         </defs>
 

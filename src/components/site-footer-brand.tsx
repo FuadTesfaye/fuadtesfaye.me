@@ -43,23 +43,25 @@ export function SiteFooterInteractiveLogotype() {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="flex w-full translate-y-[37.5%] items-center justify-center">
+        <div className="flex w-full translate-y-[28%] items-center justify-center">
           <svg
             className="container size-full"
-            viewBox="0 0 1410 240"
+            viewBox="0 0 1410 260"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <text
               x="705"
-              y="180"
+              y="195"
               textAnchor="middle"
-              className="font-cursive text-[260px] tracking-normal select-none"
+              className="font-cursive text-[360px] tracking-normal select-none"
+              textLength="1260"
+              lengthAdjust="spacingAndGlyphs"
               style={{ fontFamily: "var(--font-cursive)" }}
               fill="url(#paint0_linear_1145_73)"
               stroke="var(--foreground)"
-              strokeOpacity="0.25"
-              strokeWidth="1.5"
+              strokeOpacity="0.28"
+              strokeWidth="1.8"
             >
               Fuad
             </text>
@@ -69,7 +71,7 @@ export function SiteFooterInteractiveLogotype() {
                 x1={gradientX1}
                 y1="1"
                 x2="705"
-                y2="240"
+                y2="260"
                 gradientUnits="userSpaceOnUse"
               >
                 <stop
