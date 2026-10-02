@@ -62,6 +62,8 @@
   --font-cursive: var(--font-cursive);
   --font-heading: var(--font-heading);
   --font-arabic: var(--font-arabic);
+  --font-name: var(--font-name);
+  --font-detail: var(--font-detail);
 
   --default-mono-font-feature-settings: "ss11" 1, "zero" 1, "tnum" 1;
 
@@ -555,7 +557,8 @@
     }
 
     code {
-      @apply min-w-full font-mono text-sm;
+      @apply min-w-full text-sm;
+      font-family: var(--font-code), monospace;
     }
 
     [data-line] {

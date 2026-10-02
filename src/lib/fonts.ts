@@ -1,4 +1,11 @@
-import { Aldrich, IBM_Plex_Serif, Mea_Culpa, Reem_Kufi } from "next/font/google"
+import {
+  Aldrich,
+  IBM_Plex_Serif,
+  Mea_Culpa,
+  Metamorphous,
+  Reem_Kufi,
+  Unica_One,
+} from "next/font/google"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
 
@@ -12,6 +19,20 @@ const fontHeading = Aldrich({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-heading-unique",
+})
+
+const fontName = Metamorphous({
+  weight: ["400"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-name-unique",
+})
+
+const fontDetail = Unica_One({
+  weight: ["400"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-detail-unique",
 })
 
 const fontArabic = Reem_Kufi({
@@ -64,9 +85,14 @@ export const fontVariables = cn(
   fontHeading.variable,
   fontArabic.variable,
   fontCursive.variable,
+  fontName.variable,
+  fontDetail.variable,
   "[--font-sans:var(--font-geist-sans)]",
-  "[--font-mono:var(--font-geist-mono)]",
+  "[--font-mono:var(--font-detail-unique)]",
+  "[--font-code:var(--font-geist-mono)]",
   "[--font-heading:var(--font-heading-unique)]",
   "[--font-arabic:var(--font-arabic)]",
-  "[--font-cursive:var(--font-handwritten)]"
+  "[--font-cursive:var(--font-handwritten)]",
+  "[--font-name:var(--font-name-unique)]",
+  "[--font-detail:var(--font-detail-unique)]"
 )
