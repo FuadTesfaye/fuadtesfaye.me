@@ -1,20 +1,15 @@
-import { Suspense } from "react"
-
 import { getGitHubContributions } from "@/features/portfolio/data/github-contributions"
 
 import { Panel } from "../panel"
-import { GitHubContributionFallback, GitHubContributionGraph } from "./graph"
+import { GitHubContributionGraph } from "./graph"
 
-export function GitHubContributions() {
-  const contributions = getGitHubContributions()
+export async function GitHubContributions() {
+  const contributions = await getGitHubContributions()
 
   return (
     <Panel className="screen-line-top-border">
       <h2 className="sr-only">GitHub contributions</h2>
-
-      <Suspense fallback={<GitHubContributionFallback />}>
-        <GitHubContributionGraph contributions={contributions} />
-      </Suspense>
+      <GitHubContributionGraph initialData={contributions} />
     </Panel>
   )
 }

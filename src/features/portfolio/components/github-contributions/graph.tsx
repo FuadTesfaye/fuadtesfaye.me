@@ -1,10 +1,10 @@
 "use client"
 
-import { use, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { formatNumber } from "@/utils/format"
 import { format, parseISO } from "date-fns"
-import { LoaderIcon } from "lucide-react"
 
+import { cn } from "@/lib/utils"
 import {
   Tooltip,
   TooltipContent,
@@ -23,11 +23,10 @@ import fallbackContributions from "@/features/portfolio/data/github-contribution
 import { SOCIAL } from "@/features/portfolio/data/social-links"
 
 export function GitHubContributionGraph({
-  contributions,
+  initialData,
 }: {
-  contributions: Promise<Activity[]>
+  initialData?: Activity[]
 }) {
-  const initialData = use(contributions)
   const [data, setData] = useState<Activity[]>(() => {
     if (initialData && initialData.length > 0) {
       return initialData
@@ -36,39 +35,46 @@ export function GitHubContributionGraph({
   })
 
   useEffect(() => {
-    if (!initialData || initialData.length === 0) {
-      const apiUrl =
-        process.env.NEXT_PUBLIC_GITHUB_CONTRIBUTIONS_API_URL ||
-        "https://github-contributions-api.jogruber.de/v4"
+    if (data.length > 0) return
 
-      fetch(`${apiUrl}/${SOCIAL.github.handle}?y=last`)
-        .then((res) => {
-          if (!res.ok) throw new Error("Fetch failed")
-          return res.json() as Promise<{ contributions?: Activity[] }>
-        })
-        .then((json) => {
-          if (json?.contributions && json.contributions.length > 0) {
-            setData(json.contributions)
-          }
-        })
-        .catch(() => {
-          // Fallback already rendered
-        })
-    }
-  }, [initialData])
+    const apiUrl =
+      process.env.NEXT_PUBLIC_GITHUB_CONTRIBUTIONS_API_URL ||
+      "https://github-contributions-api.jogruber.de/v4"
 
-  if (data.length === 0) {
+    fetch(`${apiUrl}/${SOCIAL.github.handle}?y=last`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Fetch failed")
+        return res.json() as Promise<{ contributions?: Activity[] }>
+      })
+      .then((json) => {
+        if (json?.contributions && json.contributions.length > 0) {
+          setData(json.contributions)
+        }
+      })
+      .catch(() => {
+        // Fallback already rendered
+      })
+  }, [data.length])
+
+  if (!data || data.length === 0) {
     return null
   }
 
   return (
     <figure>
       <ContributionGraph
-        className="mx-auto gap-4 py-4"
+        className={cn(
+          "mx-auto gap-4 py-4",
+          '**:data-[level="0"]:fill-[#ebedf0] dark:**:data-[level="0"]:fill-[#161b22]',
+          '**:data-[level="1"]:fill-[#9be9a8] dark:**:data-[level="1"]:fill-[#0e4429]',
+          '**:data-[level="2"]:fill-[#40c463] dark:**:data-[level="2"]:fill-[#006d32]',
+          '**:data-[level="3"]:fill-[#30a14e] dark:**:data-[level="3"]:fill-[#26a641]',
+          '**:data-[level="4"]:fill-[#216e39] dark:**:data-[level="4"]:fill-[#39d353]'
+        )}
         data={data}
         blockSize={12}
         blockMargin={2}
-        blockRadius={0}
+        blockRadius={2}
         aria-label="GitHub Contributions Graph"
       >
         <ContributionGraphCalendar
@@ -127,13 +133,5 @@ export function GitHubContributionGraph({
         </ContributionGraphFooter>
       </ContributionGraph>
     </figure>
-  )
-}
-
-export function GitHubContributionFallback() {
-  return (
-    <div className="flex h-45 w-full items-center justify-center">
-      <LoaderIcon className="animate-spin text-muted-foreground" />
-    </div>
   )
 }
