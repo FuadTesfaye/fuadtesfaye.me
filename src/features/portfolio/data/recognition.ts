@@ -9,7 +9,7 @@ import { INTELLECTUAL_PROPERTY } from "./intellectual-property"
  * Entry keys shown first, in this order, so the strongest items stay above
  * the fold instead of sinking under newer but lesser entries.
  */
-export const RECOGNITION_PINNED_KEYS = ["insa-cyber-talent-2025"]
+export const RECOGNITION_PINNED_KEYS: string[] = []
 
 /**
  * Awards, certifications, and IP registrations merged into one list, newest

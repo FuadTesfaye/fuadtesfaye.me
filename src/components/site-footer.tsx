@@ -1,7 +1,6 @@
 import { LICENSE, SOURCE_CODE_GITHUB_URL } from "@/config/site"
 import { cn } from "@/lib/utils"
-import { DmcaIcon, GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons"
-import { SiteFooterInteractiveLogotype } from "@/components/site-footer-brand"
+import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons"
 import { SOCIAL } from "@/features/portfolio/data/social-links"
 
 export function SiteFooter() {
@@ -22,11 +21,11 @@ export function SiteFooter() {
             <dd>
               <a
                 className="link-underline"
-                href={xLink.href}
+                href={githubLink.href}
                 target="_blank"
                 rel="noopener"
               >
-                {xLink.handle}
+                Fuad Tesfaye
               </a>
             </dd>
           </Item>
@@ -38,10 +37,7 @@ export function SiteFooter() {
                 <li>Tailwind CSS</li>
                 <li>shadcn/ui</li>
                 <li>Vercel</li>
-                <li>Evil Charts</li>
-                <li>Devouring Details</li>
-                <li>Skiper UI</li>
-                <li>Making Software</li>
+                <li>Clean Architecture</li>
               </ul>
             </dd>
           </Item>
@@ -49,25 +45,6 @@ export function SiteFooter() {
           <Item>
             <dt>Deployed on</dt>
             <dd>Vercel</dd>
-          </Item>
-
-          <Item>
-            <dt>Analytics</dt>
-            <dd>
-              <ul>
-                <li>
-                  <a
-                    className="link-underline"
-                    href="https://openpanel.dev?utm_source=chanhdai.com&utm_medium=referral&utm_campaign=footer"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    OpenPanel
-                  </a>
-                </li>
-                <li>Google Analytics</li>
-              </ul>
-            </dd>
           </Item>
 
           <Item>
@@ -103,18 +80,6 @@ export function SiteFooter() {
           <div className="mx-auto flex items-center justify-center gap-3 border-x border-line bg-background px-4">
             <a
               className="flex items-center text-muted-foreground transition-[color] hover:text-foreground"
-              href={xLink.href}
-              target="_blank"
-              rel="noopener"
-              aria-label="X Profile"
-            >
-              <XIcon className="size-4" />
-            </a>
-
-            <Separator />
-
-            <a
-              className="flex items-center text-muted-foreground transition-[color] hover:text-foreground"
               href={githubLink.href}
               target="_blank"
               rel="noopener"
@@ -138,16 +103,13 @@ export function SiteFooter() {
             <Separator />
 
             <a
-              className="flex text-muted-foreground transition-[color] hover:text-foreground"
-              href={
-                process.env.NEXT_PUBLIC_DMCA_URL ||
-                "https://www.dmca.com/ProtectionPro.aspx"
-              }
+              className="flex items-center text-muted-foreground transition-[color] hover:text-foreground"
+              href={xLink.href}
               target="_blank"
               rel="noopener"
-              aria-label="DMCA.com Protection Status"
+              aria-label="X Profile"
             >
-              <DmcaIcon className="h-4.5 w-auto" />
+              <XIcon className="size-4" />
             </a>
           </div>
         </div>
@@ -158,7 +120,7 @@ export function SiteFooter() {
         </div> */}
       </div>
 
-      <SiteFooterInteractiveLogotype />
+      {/* <SiteFooterInteractiveLogotype /> */}
 
       <div className="h-(--fade-bottom-height)" />
       <div className="pb-[env(safe-area-inset-bottom,0)]" />

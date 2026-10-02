@@ -19,29 +19,29 @@ export const LICENSE = {
 
 export const META_THEME_COLORS = {
   light: "#ffffff",
-  dark: "#09090b",
+  dark: "#0e1019",
 }
 
 export const MAIN_NAV: NavItem<Route>[] = [
   {
-    title: "Components",
-    href: "/components",
+    title: "About",
+    href: "/#hello" as Route,
   },
   {
-    title: "Blocks",
-    href: "/blocks",
+    title: "Skills",
+    href: "/#stack" as Route,
   },
   {
-    title: "Craft",
-    href: "/craft",
+    title: "Experience",
+    href: "/#experience" as Route,
   },
   {
-    title: "Blog",
-    href: "/blog",
+    title: "Education",
+    href: "/#education" as Route,
   },
   {
-    title: "Sponsors",
-    href: "/sponsors",
+    title: "Projects",
+    href: "/#projects" as Route,
   },
 ]
 
