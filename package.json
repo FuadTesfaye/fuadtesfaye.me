@@ -58,6 +58,7 @@
     "@number-flow/react": "^0.6.0",
     "@openpanel/web": "^1.4.1",
     "@rexa-developer/tiks": "^0.1.9",
+    "@splinetool/runtime": "^2.0.65",
     "@tabler/icons-react": "^3.42.0",
     "@visx/curve": "4.0.1-alpha.0",
     "@visx/event": "4.0.1-alpha.0",

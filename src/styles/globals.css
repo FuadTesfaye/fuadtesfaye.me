@@ -176,8 +176,8 @@
 }
 
 @utility diagonal-stripes {
-  @apply [--pattern-foreground:var(--color-line)]/56;
-  @apply bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px];
+  @apply [--pattern-foreground:var(--color-line)]/50;
+  @apply bg-[repeating-linear-gradient(45deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_8px),repeating-linear-gradient(-45deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_8px)];
 }
 
 @utility dot-grid {
