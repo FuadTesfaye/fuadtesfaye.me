@@ -8,6 +8,12 @@ const ID = "stack"
 export function TechStack() {
   return (
     <Panel id={ID}>
+      <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-1.5 font-mono text-[9px] tracking-widest text-muted-foreground uppercase">
+        <span>SECTION // 04</span>
+        <span>TECHNICAL ARSENAL</span>
+        <span>SPEC SHEET // 2026</span>
+      </div>
+
       <PanelHeader>
         <PanelTitle>
           <a href={`#${ID}`}>Stack</a>

@@ -52,6 +52,12 @@ export function SiteFooterCad() {
         </div>
 
         <div className="relative">
+          <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-1.5 font-mono text-[9px] tracking-widest text-muted-foreground uppercase">
+            <span>COLOPHON // 2026</span>
+            <span>ARCHITECTURAL SPECIFICATION</span>
+            <span>fuadtesfaye.me</span>
+          </div>
+
           <div className="screen-line-bottom flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-4 py-3 font-mono text-sm">
             <span className="font-medium">{SITE_TITLE}</span>
             <span className="font-sans text-muted-foreground">

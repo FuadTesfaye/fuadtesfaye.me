@@ -28,7 +28,7 @@ export function SocialLinks() {
                 <TooltipTrigger
                   render={
                     <Button
-                      className="text-foreground/80 shadow-none [&_svg:not([class*='size-'])]:size-4.5"
+                      className="border-line bg-card/50 text-foreground/80 shadow-none transition-colors duration-200 hover:bg-foreground hover:text-background [&_svg:not([class*='size-'])]:size-4.5"
                       variant="outline"
                       size="icon-sm"
                       nativeButton={false}

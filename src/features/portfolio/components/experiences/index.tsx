@@ -23,6 +23,12 @@ const MAX = 3
 export function Experiences() {
   return (
     <Panel id={ID}>
+      <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-1.5 font-mono text-[9px] tracking-widest text-muted-foreground uppercase">
+        <span>SECTION // 05</span>
+        <span>CAREER CHRONOLOGY</span>
+        <span>INDEX // {EXPERIENCES.length} APPOINTMENTS</span>
+      </div>
+
       <PanelHeader>
         <PanelTitle>
           <a href={`#${ID}`}>Experience</a>

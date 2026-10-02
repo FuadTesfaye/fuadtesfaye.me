@@ -1,15 +1,8 @@
 "use client"
 
-import { useEffect, useId, useRef } from "react"
+import { useId, useRef } from "react"
 import type { Transition } from "motion/react"
-import {
-  motion,
-  useInView,
-  useMotionValue,
-  useReducedMotion,
-  useSpring,
-  useTransform,
-} from "motion/react"
+import { motion } from "motion/react"
 
 import { metalClickSound } from "@/lib/soundcn/metal-click"
 import { useSound } from "@/hooks/soundcn/use-sound"
@@ -27,49 +20,10 @@ const springTransition: Transition = {
 
 export function HeroInteractiveMark() {
   const id = useId()
-  const ids = {
-    radialGradient: `fuad-spotlight-${id}`,
-    hatchPattern: `fuad-hatch-${id}`,
-  }
+  const hatchPatternId = `fuad-hatch-${id}`
 
   const ref = useRef<SVGSVGElement>(null)
   const [play] = useSound(metalClickSound)
-
-  const shouldReduceMotion = useReducedMotion()
-  const isInView = useInView(ref, { margin: "80px" })
-
-  const mouseX = useMotionValue(0.5)
-  const mouseY = useMotionValue(0.5)
-
-  const cx = useSpring(useTransform(mouseX, [0, 1], [0, 520]), {
-    stiffness: 280,
-    damping: 28,
-    mass: 0.1,
-  })
-
-  const cy = useSpring(useTransform(mouseY, [0, 1], [0, 320]), {
-    stiffness: 280,
-    damping: 28,
-    mass: 0.1,
-  })
-
-  useEffect(() => {
-    if (shouldReduceMotion || !isInView) return
-    if (window.matchMedia("(hover: none)").matches) return
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = ref.current?.getBoundingClientRect()
-      if (rect) {
-        const x = (e.clientX - rect.left) / rect.width
-        const y = (e.clientY - rect.top) / rect.height
-        mouseX.set(Math.max(0, Math.min(1, x)))
-        mouseY.set(Math.max(0, Math.min(1, y)))
-      }
-    }
-
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [shouldReduceMotion, isInView, mouseX, mouseY])
 
   return (
     <div className="relative flex size-full items-center justify-center p-3 select-none sm:p-5">
@@ -84,28 +38,8 @@ export function HeroInteractiveMark() {
         onTap={() => play()}
       >
         <defs>
-          <motion.radialGradient
-            id={ids.radialGradient}
-            cx={cx}
-            cy={cy}
-            r="160"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop
-              offset="0%"
-              stopColor="var(--foreground)"
-              stopOpacity="0.45"
-            />
-            <stop
-              offset="60%"
-              stopColor="var(--foreground)"
-              stopOpacity="0.12"
-            />
-            <stop offset="100%" stopColor="var(--foreground)" stopOpacity="0" />
-          </motion.radialGradient>
-
           <pattern
-            id={ids.hatchPattern}
+            id={hatchPatternId}
             x="0"
             y="0"
             width="16"
@@ -146,6 +80,17 @@ export function HeroInteractiveMark() {
           <path d="M16 300h8M20 296v8" />
           <path d="M496 300h8M500 296v8" />
         </g>
+
+        {/* Subtle architectural background watermark of Arabic calligraphy */}
+        <text
+          x="260"
+          y="205"
+          textAnchor="middle"
+          className="pointer-events-none fill-foreground/[0.035] font-arabic text-[180px] font-bold select-none dark:fill-foreground/4.5"
+          aria-hidden
+        >
+          فُؤَيْد
+        </text>
 
         {/* Technical telemetry labels */}
         <text
@@ -224,7 +169,7 @@ export function HeroInteractiveMark() {
           {/* Diagonal hatch on top face */}
           <polygon
             points="260,78 400,154 260,230 120,154"
-            fill={`url(#${ids.hatchPattern})`}
+            fill={`url(#${hatchPatternId})`}
             opacity="0.5"
           />
 
@@ -238,17 +183,13 @@ export function HeroInteractiveMark() {
             opacity="0.7"
           />
 
-          {/* Center Brand Emblem: Arabic Calligraphy Fuayd (فُؤَيْد) */}
+          {/* Center Brand Emblem: Arabic Calligraphy Fuayd (فُؤَيْد) - Solid vector */}
           <g className="pointer-events-none select-none">
             <text
               x="260"
               y="166"
               textAnchor="middle"
               className="fill-foreground font-arabic text-[50px] font-bold tracking-normal select-none"
-              style={{
-                filter:
-                  "drop-shadow(0 2px 10px color-mix(in oklab, var(--foreground) 25%, transparent))",
-              }}
             >
               فُؤَيْد
             </text>
@@ -262,12 +203,13 @@ export function HeroInteractiveMark() {
             </text>
           </g>
 
-          {/* Interactive cursor spotlight highlight stroke over keycap */}
+          {/* Pure hairline wireframe rim bevel */}
           <polygon
             points="260,78 400,154 260,230 120,154"
             fill="none"
-            stroke={`url(#${ids.radialGradient})`}
-            strokeWidth="2.5"
+            stroke="var(--foreground)"
+            strokeOpacity="0.3"
+            strokeWidth="1.2"
           />
         </motion.g>
 
@@ -282,7 +224,7 @@ export function HeroInteractiveMark() {
         </text>
       </motion.svg>
 
-      {/* Cursive arrow & annotation pointing to the switch */}
+      {/* Cursive annotation pointing to the switch */}
       <HandwrittenNote
         className="right-4 bottom-3 hidden w-36 flex-col items-end pointer-fine:md:flex"
         aria-hidden

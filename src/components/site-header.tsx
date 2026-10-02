@@ -48,9 +48,9 @@ export function SiteHeader() {
             <span className="font-name text-lg font-normal tracking-wide text-foreground transition-colors group-hover:text-foreground/80">
               Fuad
             </span>
-            <span className="hidden items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2 py-0.5 font-mono text-[9px] font-medium tracking-widest text-emerald-400 uppercase sm:inline-flex">
-              <span className="size-1.5 animate-pulse rounded-full bg-emerald-400" />
-              ONLINE
+            <span className="hidden items-center gap-1.5 rounded-full border border-line bg-muted/50 px-2 py-0.5 font-mono text-[9px] font-medium tracking-widest text-muted-foreground uppercase sm:inline-flex">
+              <span className="size-1.25 rounded-full bg-foreground/60" />
+              CTO @ ZION
             </span>
           </div>
         </Link>

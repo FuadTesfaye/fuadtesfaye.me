@@ -65,11 +65,11 @@ export function GitHubContributionGraph({
       <ContributionGraph
         className={cn(
           "mx-auto gap-4 py-4",
-          '**:data-[level="0"]:fill-[#ebedf0] dark:**:data-[level="0"]:fill-[#161b22]',
-          '**:data-[level="1"]:fill-[#9be9a8] dark:**:data-[level="1"]:fill-[#0e4429]',
-          '**:data-[level="2"]:fill-[#40c463] dark:**:data-[level="2"]:fill-[#006d32]',
-          '**:data-[level="3"]:fill-[#30a14e] dark:**:data-[level="3"]:fill-[#26a641]',
-          '**:data-[level="4"]:fill-[#216e39] dark:**:data-[level="4"]:fill-[#39d353]'
+          '**:data-[level="0"]:fill-[#ebedf0] dark:**:data-[level="0"]:fill-[#131622]',
+          '**:data-[level="1"]:fill-[#cbd5e1] dark:**:data-[level="1"]:fill-[#252a3d]',
+          '**:data-[level="2"]:fill-[#94a3b8] dark:**:data-[level="2"]:fill-[#3d4666]',
+          '**:data-[level="3"]:fill-[#64748b] dark:**:data-[level="3"]:fill-[#6e7c9e]',
+          '**:data-[level="4"]:fill-[#1e293b] dark:**:data-[level="4"]:fill-[#cbd5e1]'
         )}
         data={data}
         blockSize={12}

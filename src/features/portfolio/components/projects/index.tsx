@@ -15,6 +15,12 @@ const ID = "projects"
 export function Projects() {
   return (
     <Panel id={ID}>
+      <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-1.5 font-mono text-[9px] tracking-widest text-muted-foreground uppercase">
+        <span>SECTION // 06</span>
+        <span>SELECTED ARCHIVE</span>
+        <span>INDEX // {PROJECTS.length} WORKS</span>
+      </div>
+
       <PanelHeader>
         <PanelTitle>
           <a href={`#${ID}`}>Projects</a>

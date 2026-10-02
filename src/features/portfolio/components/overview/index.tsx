@@ -20,6 +20,12 @@ export function Overview() {
       id="contact"
       className="screen-line-bottom-none screen-line-top-none"
     >
+      <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-1.5 font-mono text-[9px] tracking-widest text-muted-foreground uppercase">
+        <span>SECTION // 01</span>
+        <span>DOSSIER SPECIFICATION</span>
+        <span>CHANNELS // VERIFIED</span>
+      </div>
+
       <h2 className="sr-only">Overview</h2>
 
       <PanelContent className="grid gap-x-4 gap-y-2.5 sm:grid-cols-2">
