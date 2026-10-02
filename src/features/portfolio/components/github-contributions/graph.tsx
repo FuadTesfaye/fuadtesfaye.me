@@ -1,6 +1,6 @@
 "use client"
 
-import { use } from "react"
+import { use, useEffect, useState } from "react"
 import { formatNumber } from "@/utils/format"
 import { format, parseISO } from "date-fns"
 import { LoaderIcon } from "lucide-react"
@@ -19,6 +19,7 @@ import {
   ContributionGraphLegend,
   ContributionGraphTotalCount,
 } from "@/registry/components/contribution-graph"
+import fallbackContributions from "@/features/portfolio/data/github-contributions-fallback.json"
 import { SOCIAL } from "@/features/portfolio/data/social-links"
 
 export function GitHubContributionGraph({
@@ -26,7 +27,35 @@ export function GitHubContributionGraph({
 }: {
   contributions: Promise<Activity[]>
 }) {
-  const data = use(contributions)
+  const initialData = use(contributions)
+  const [data, setData] = useState<Activity[]>(() => {
+    if (initialData && initialData.length > 0) {
+      return initialData
+    }
+    return fallbackContributions as Activity[]
+  })
+
+  useEffect(() => {
+    if (!initialData || initialData.length === 0) {
+      const apiUrl =
+        process.env.NEXT_PUBLIC_GITHUB_CONTRIBUTIONS_API_URL ||
+        "https://github-contributions-api.jogruber.de/v4"
+
+      fetch(`${apiUrl}/${SOCIAL.github.handle}?y=last`)
+        .then((res) => {
+          if (!res.ok) throw new Error("Fetch failed")
+          return res.json() as Promise<{ contributions?: Activity[] }>
+        })
+        .then((json) => {
+          if (json?.contributions && json.contributions.length > 0) {
+            setData(json.contributions)
+          }
+        })
+        .catch(() => {
+          // Fallback already rendered
+        })
+    }
+  }, [initialData])
 
   if (data.length === 0) {
     return null

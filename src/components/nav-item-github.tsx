@@ -6,15 +6,19 @@ import { GitHubStars } from "@/components/github-stars"
 const getStargazerCount = unstable_cache(
   async () => {
     try {
+      const headers: Record<string, string> = {
+        Accept: "application/vnd.github+json",
+        "User-Agent": "fuadtesfaye.me",
+        "X-GitHub-Api-Version": "2026-03-10",
+      }
+
+      if (process.env.GITHUB_API_TOKEN) {
+        headers.Authorization = `Bearer ${process.env.GITHUB_API_TOKEN}`
+      }
+
       const response = await fetch(
         `https://api.github.com/repos/${SOURCE_CODE_GITHUB_REPO}`,
-        {
-          headers: {
-            Accept: "application/vnd.github+json",
-            Authorization: `Bearer ${process.env.GITHUB_API_TOKEN}`,
-            "X-GitHub-Api-Version": "2026-03-10",
-          },
-        }
+        { headers }
       )
 
       if (!response.ok) {
