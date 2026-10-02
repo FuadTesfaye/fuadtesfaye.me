@@ -1,0 +1,23 @@
+{
+  "short_name": "Fuad Tesfaye",
+  "name": "Fuad Tesfaye",
+  "description": "Full-Stack Software Engineer Building Modern Web Products.",
+  "icons": [
+    {
+      "src": "/flogo.png",
+      "type": "image/png",
+      "sizes": "256x139",
+      "purpose": "any"
+    },
+    {
+      "src": "/flogo.ico",
+      "type": "image/x-icon",
+      "sizes": "16x16 32x32 48x48",
+      "purpose": "any"
+    }
+  ],
+  "id": "/?utm_source=pwa",
+  "start_url": "/?utm_source=pwa",
+  "display": "standalone",
+  "scope": "/"
+}
