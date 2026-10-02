@@ -1,15 +1,15 @@
 import { USER } from "@/features/portfolio/data/user"
 
 import { FlipSentences } from "./flip-sentences"
+import { HeroInteractiveMark } from "./hero-interactive-mark"
 import { PronounceMyName } from "./pronounce-my-name"
-import { SplineHero } from "./spline-hero"
 import { VerifiedIcon } from "./verified-icon"
 
 export function ProfileHeader() {
   return (
     <div className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x screen-line-bottom-border after:z-1">
       <figure className="relative col-span-2 flex min-h-[260px] w-full items-center justify-center overflow-hidden border-b border-line sm:col-span-1 sm:col-start-2 sm:min-h-[290px] sm:border-b-0">
-        <SplineHero />
+        <HeroInteractiveMark />
       </figure>
 
       <div className="flex flex-col sm:row-span-2 sm:row-start-1">
