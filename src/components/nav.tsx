@@ -1,9 +1,14 @@
-import React from "react"
+"use client"
+
+import React, { useEffect, useState } from "react"
 import type { Route } from "next"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { motion } from "motion/react"
 
-import type { NavItem } from "@/types/nav"
+import type { NavItem as NavItemType } from "@/types/nav"
 import { cn } from "@/lib/utils"
+import { useClickSound } from "@/hooks/soundcn/use-click-sound"
 
 export function Nav({
   items,
@@ -11,32 +16,134 @@ export function Nav({
   className,
   exactMatch = false,
 }: {
-  items: NavItem<Route>[]
+  items: NavItemType<Route>[]
   activeId?: string
   className?: string
   exactMatch?: boolean
 }) {
+  const pathname = usePathname()
+  const [clickSound] = useClickSound()
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [activeSection, setActiveSection] = useState<string>("")
+
+  // Detect active section on homepage scroll
+  useEffect(() => {
+    if (pathname !== "/") return
+
+    const sectionIds = items
+      .map((item) => {
+        const hashMatch = item.href.match(/#(.*)$/)
+        return hashMatch ? hashMatch[1] : null
+      })
+      .filter(Boolean) as string[]
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      const offset = 220
+
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const id = sectionIds[i]
+        const element = document.getElementById(id)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          const elementTop = rect.top + window.scrollY
+          if (scrollY >= elementTop - offset) {
+            setActiveSection(id)
+            return
+          }
+        }
+      }
+
+      if (scrollY < 200 && sectionIds.length > 0) {
+        setActiveSection(sectionIds[0])
+      }
+    }
+
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [pathname, items])
+
   return (
     <nav
       data-active-id={activeId}
-      className={cn("flex items-center gap-4", className)}
+      className={cn(
+        "relative flex items-center gap-0.5 rounded-full border border-line/70 bg-card/60 p-1 shadow-2xs backdrop-blur-md dark:bg-card/40",
+        className
+      )}
+      onMouseLeave={() => setHoveredIndex(null)}
     >
-      {items.map(({ title, href }) => {
-        const isActive = exactMatch
+      {items.map(({ title, href }, index) => {
+        const hashMatch = href.match(/#(.*)$/)
+        const sectionId = hashMatch ? hashMatch[1] : null
+
+        const isSectionActive =
+          pathname === "/" && sectionId ? activeSection === sectionId : false
+
+        const isPageActive = exactMatch
           ? activeId === href
           : activeId === href ||
             (href === "/" // Home page
               ? ["/", "/index"].includes(activeId || "")
               : activeId?.startsWith(href))
 
+        const isActive = isSectionActive || (!sectionId && isPageActive)
+        const isHovered = hoveredIndex === index
+
+        const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+          clickSound()
+          if (pathname === "/" && sectionId) {
+            const target = document.getElementById(sectionId)
+            if (target) {
+              e.preventDefault()
+              target.scrollIntoView({ behavior: "smooth", block: "start" })
+              history.pushState(null, "", href)
+              setActiveSection(sectionId)
+            }
+          }
+        }
+
+        const indexStr = String(index + 1).padStart(2, "0")
+
         return (
-          <NavItem
+          <Link
             key={href}
             href={href}
             aria-current={isActive ? "page" : undefined}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onClick={handleClick}
+            className={cn(
+              "group relative flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs transition-colors outline-none",
+              isActive
+                ? "font-semibold text-foreground"
+                : "text-muted-foreground hover:text-foreground"
+            )}
           >
-            {title}
-          </NavItem>
+            {/* Smooth floating indicator for hover */}
+            {isHovered && (
+              <motion.span
+                layoutId="nav-hover-pill"
+                className="absolute inset-0 rounded-full bg-foreground/6 dark:bg-foreground/10"
+                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+              />
+            )}
+
+            {/* Active section indicator pill */}
+            {isActive && !isHovered && (
+              <motion.span
+                layoutId="nav-active-pill"
+                className="absolute inset-0 rounded-full border border-foreground/15 bg-foreground/8 shadow-xs dark:border-foreground/20 dark:bg-foreground/12"
+                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+              />
+            )}
+
+            <span className="relative z-1 font-mono text-[9px] text-muted-foreground/50 transition-colors group-hover:text-muted-foreground">
+              {indexStr}
+            </span>
+            <span className="relative z-1 font-heading text-xs tracking-wider uppercase">
+              {title}
+            </span>
+          </Link>
         )
       })}
     </nav>

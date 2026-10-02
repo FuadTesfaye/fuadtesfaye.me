@@ -34,10 +34,25 @@ export function SiteHeader() {
   }))
 
   return (
-    <header className="sticky top-0 z-50 max-w-screen overflow-x-clip bg-background px-2">
-      <div className="screen-line-top screen-line-bottom mx-auto flex h-(--header-height) items-center gap-2 border-x screen-line-bottom-border screen-line-top-border pr-2 pl-4 group-has-data-[slot=layout-wide]/layout:container after:z-1 sm:gap-4 md:max-w-4xl">
-        <Link href="/" aria-label="Home">
-          <ChanhDaiMark className="h-6 shrink-0" />
+    <header className="sticky top-0 z-50 max-w-screen overflow-x-clip bg-background/80 px-2 backdrop-blur-md transition-all supports-backdrop-filter:bg-background/60">
+      <div className="screen-line-top screen-line-bottom relative mx-auto flex h-(--header-height) items-center gap-2 border-x screen-line-bottom-border screen-line-top-border pr-2 pl-3 group-has-data-[slot=layout-wide]/layout:container after:z-1 sm:gap-4 sm:pl-4 md:max-w-4xl">
+        <Link
+          href="/"
+          aria-label="Fuad Tesfaye Home"
+          className="group flex items-center gap-2.5 transition-opacity outline-none select-none hover:opacity-90"
+        >
+          <div className="relative flex items-center">
+            <ChanhDaiMark className="h-6 shrink-0 transition-transform duration-300 group-hover:scale-105 group-active:scale-95" />
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="font-name text-lg font-normal tracking-wide text-foreground transition-colors group-hover:text-foreground/80">
+              Fuad
+            </span>
+            <span className="hidden items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2 py-0.5 font-mono text-[9px] font-medium tracking-widest text-emerald-400 uppercase sm:inline-flex">
+              <span className="size-1.5 animate-pulse rounded-full bg-emerald-400" />
+              ONLINE
+            </span>
+          </div>
         </Link>
 
         <div className="flex-1" />
@@ -47,7 +62,7 @@ export function SiteHeader() {
         <div className="flex items-center max-sm:*:data-[slot=command-menu-trigger]:hidden">
           <Separator
             orientation="vertical"
-            className="mr-2 max-sm:hidden data-vertical:h-5 data-vertical:self-center"
+            className="mr-1.5 opacity-60 max-sm:hidden data-vertical:h-4 data-vertical:self-center"
           />
           <CommandMenu
             docs={docPreviews}
@@ -57,18 +72,41 @@ export function SiteHeader() {
           />
           <Separator
             orientation="vertical"
-            className="mx-2 max-sm:hidden data-vertical:h-5 data-vertical:self-center"
+            className="mx-1 opacity-60 max-sm:hidden data-vertical:h-4 data-vertical:self-center"
           />
           <NavItemGitHub />
           <Separator
             orientation="vertical"
-            className="mx-2 data-vertical:h-5 data-vertical:self-center"
+            className="mx-1 opacity-60 data-vertical:h-4 data-vertical:self-center"
           />
           <ThemeToggle />
         </div>
 
-        {/* <div className="absolute top-[-3.5px] left-[-4.5px] z-2 flex size-2 border border-line bg-background" /> */}
-        {/* <div className="absolute top-[-3.5px] right-[-4.5px] z-2 flex size-2 border border-line bg-background" /> */}
+        {/* Precision corner crosshairs */}
+        <div
+          className="pointer-events-none absolute -top-1 -left-1 z-2 flex size-2 items-center justify-center font-mono text-[9px] text-muted-foreground/35 select-none"
+          aria-hidden
+        >
+          +
+        </div>
+        <div
+          className="pointer-events-none absolute -top-1 -right-1 z-2 flex size-2 items-center justify-center font-mono text-[9px] text-muted-foreground/35 select-none"
+          aria-hidden
+        >
+          +
+        </div>
+        <div
+          className="pointer-events-none absolute -bottom-1 -left-1 z-2 flex size-2 items-center justify-center font-mono text-[9px] text-muted-foreground/35 select-none"
+          aria-hidden
+        >
+          +
+        </div>
+        <div
+          className="pointer-events-none absolute -right-1 -bottom-1 z-2 flex size-2 items-center justify-center font-mono text-[9px] text-muted-foreground/35 select-none"
+          aria-hidden
+        >
+          +
+        </div>
       </div>
     </header>
   )

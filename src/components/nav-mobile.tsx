@@ -55,10 +55,13 @@ export function NavMobile({ items }: { items: NavItem<Route>[] }) {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className="rounded-lg px-3 py-1.5 text-base aria-[current=page]:bg-accent"
+                className="flex items-center justify-between rounded-lg px-3 py-2 font-heading text-xs tracking-wider uppercase transition-colors aria-[current=page]:bg-accent aria-[current=page]:text-foreground"
                 onClick={() => handleOpenChange(false)}
               >
-                {link.title}
+                <span>{link.title}</span>
+                <span className="font-mono text-[10px] text-muted-foreground/50">
+                  {String(items.indexOf(link) + 1).padStart(2, "0")}
+                </span>
               </Link>
             )
           })}
