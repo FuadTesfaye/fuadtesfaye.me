@@ -7,13 +7,13 @@ import { VerifiedIcon } from "./verified-icon"
 
 export function ProfileHeader() {
   return (
-    <div className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x screen-line-bottom-border after:z-1">
-      <figure className="relative col-span-2 flex min-h-[260px] w-full items-center justify-center overflow-hidden border-b border-line sm:col-span-1 sm:col-start-2 sm:min-h-[290px] sm:border-b-0">
+    <div className="screen-line-bottom grid grid-cols-[1fr_auto] grid-rows-[1fr_auto] overflow-y-clip border-x screen-line-bottom-border after:z-1">
+      <figure className="relative col-span-2 flex min-h-[260px] w-full items-center justify-center overflow-hidden border-b border-line sm:col-span-1 sm:col-start-1 sm:row-start-1 sm:min-h-[290px] sm:border-r sm:border-b-0">
         <HeroInteractiveMark />
       </figure>
 
-      <div className="flex flex-col sm:row-span-2 sm:row-start-1">
-        <div className="screen-line-top mt-auto shrink-0 border-r border-line">
+      <div className="flex flex-col sm:col-start-2 sm:row-span-2 sm:row-start-1">
+        <div className="screen-line-top mt-auto shrink-0 border-l border-line">
           <div className="mx-0.5 my-0.75 flex outline-none">
             <div className="relative size-30 rounded-full min-[24rem]:size-32 sm:size-40">
               <img
@@ -29,17 +29,11 @@ export function ProfileHeader() {
               <div className="pointer-events-none absolute inset-0 rounded-[inherit] inset-ring-1 inset-ring-foreground/30 dark:inset-ring-foreground/10" />
             </div>
           </div>
-          {/* <AvatarLightsToggle className="group/avatar-lights-toggle mx-0.5 my-0.75 flex outline-none">
-            <AvatarLights
-              className="ring-border ring-offset-background group-focus-visible/avatar-lights-toggle:ring-1 group-focus-visible/avatar-lights-toggle:ring-offset-2"
-              variants={USER.avatarVariants}
-            />
-          </AvatarLightsToggle> */}
         </div>
       </div>
 
-      <div className="flex flex-col">
-        <div className="z-1 mt-auto border-t border-line">
+      <div className="flex flex-col sm:col-start-1 sm:row-start-2">
+        <div className="z-1 mt-auto border-t border-line sm:border-r">
           <div className="flex -translate-x-px items-center gap-2 pl-4">
             <h1 className="-translate-y-px text-[2rem]/none font-medium tracking-tight">
               {USER.displayName}

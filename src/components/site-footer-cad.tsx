@@ -14,7 +14,6 @@ import { SOCIAL } from "@/features/portfolio/data/social-links"
 import packageJson from "../../package.json"
 // Precomputed by `pnpm registry:build`, so the count costs no registry import.
 import registryStats from "../../registry-stats.json"
-import { ChanhDaiMark } from "./chanhdai-mark"
 
 const INSPIRED_BY = [
   "Tailwind CSS",
@@ -28,11 +27,11 @@ const INSPIRED_BY = [
 ]
 
 const OPENPANEL_URL =
-  "https://openpanel.dev?utm_source=chanhdai.com&utm_medium=referral&utm_campaign=footer"
+  "https://openpanel.dev?utm_source=fuadtesfaye.me&utm_medium=referral&utm_campaign=footer"
 
 // Not derived from `SITE_INFO.url`: that follows `NEXT_PUBLIC_APP_URL` and
 // would read `ncdai.localhost` in dev.
-const SITE_TITLE = "chanhdai.com"
+const SITE_TITLE = "fuadtesfaye.me"
 
 const SITE_SUBTITLE = packageJson.description
 
@@ -64,11 +63,11 @@ export function SiteFooterCad() {
             <Field label="Crafted by">
               <a
                 className="link-underline"
-                href={xLink.href}
+                href={githubLink.href}
                 target="_blank"
                 rel="noopener"
               >
-                {xLink.handle}
+                Fuad Tesfaye
               </a>
             </Field>
 
@@ -191,10 +190,14 @@ export function SiteFooterCad() {
         <div className="screen-line-top screen-line-bottom flex items-center gap-3 screen-line-bottom-border px-4 py-3 text-muted-foreground">
           <Link
             href="/"
-            className="mr-auto text-muted-foreground transition-[color] hover:text-foreground"
+            className="mr-auto flex items-center text-muted-foreground transition-[color] hover:text-foreground"
             aria-label="Home"
           >
-            <ChanhDaiMark className="h-4" />
+            <img
+              src="/flogo.png"
+              alt="Fuad Tesfaye"
+              className="h-4 w-auto opacity-80 brightness-0 transition-opacity hover:opacity-100 dark:invert"
+            />
           </Link>
 
           <a

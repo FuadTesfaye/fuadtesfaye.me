@@ -148,7 +148,7 @@ export function HeroInteractiveMark() {
           y="36"
           className="fill-muted-foreground/70 font-mono text-[9px] tracking-widest uppercase"
         >
-          SYS // CLEAN-ARCH • v2.6
+          SYS // FU&apos;ĀD (فؤاد) • v2.6
         </text>
         <text
           x="494"
@@ -233,14 +233,28 @@ export function HeroInteractiveMark() {
             opacity="0.7"
           />
 
-          {/* Center Brand Emblem: Fuad Logo */}
-          <g transform="translate(195, 120)">
-            <image
-              href="/flogo.png"
-              width="130"
-              height="70"
-              className="opacity-85 brightness-0 transition-all hover:opacity-100 dark:invert"
-            />
+          {/* Center Brand Emblem: Arabic Calligraphy Fuad (فُؤَاد) */}
+          <g className="pointer-events-none select-none">
+            <text
+              x="260"
+              y="166"
+              textAnchor="middle"
+              className="fill-foreground font-arabic text-[50px] font-bold tracking-normal select-none"
+              style={{
+                filter:
+                  "drop-shadow(0 2px 10px color-mix(in oklab, var(--foreground) 25%, transparent))",
+              }}
+            >
+              فُـؤَاد
+            </text>
+            <text
+              x="260"
+              y="186"
+              textAnchor="middle"
+              className="fill-muted-foreground/80 font-mono text-[9px] tracking-[0.22em] uppercase select-none"
+            >
+              {"FU'ĀD // HEART & INTELLECT"}
+            </text>
           </g>
 
           {/* Interactive cursor spotlight highlight stroke over keycap */}
@@ -259,21 +273,20 @@ export function HeroInteractiveMark() {
           textAnchor="end"
           className="fill-muted-foreground/60 font-mono text-[10px] tracking-wider"
         >
-          FIG. 1.0 // TACTILE SWITCH
+          FIG. 1.0 // ITQĀN (إتقان) TACTILE SWITCH
         </text>
       </motion.svg>
 
-      {/* Handwritten arrow & annotation pointing to the switch */}
+      {/* Cursive arrow & annotation pointing to the switch */}
       <HandwrittenNote
-        className="bottom-8 left-full hidden w-36 flex-col items-start pointer-fine:xl:flex"
+        className="right-4 bottom-3 hidden w-36 flex-col items-end pointer-fine:md:flex"
         aria-hidden
       >
-        <HandwrittenArrow className="-scale-y-100 -rotate-6" />
-        <span className="ml-3 -rotate-6 text-xs text-muted-foreground">
+        <span className="-rotate-6 font-cursive text-2xl text-muted-foreground">
           tactile switch
-          <span className="block" />
-          click for sound
+          <span className="block text-lg opacity-85">click for sound</span>
         </span>
+        <HandwrittenArrow className="translate-x-2 -scale-x-100 -rotate-12" />
       </HandwrittenNote>
     </div>
   )

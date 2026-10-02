@@ -1,4 +1,4 @@
-import { Caveat, IBM_Plex_Serif } from "next/font/google"
+import { Great_Vibes, IBM_Plex_Serif, Reem_Kufi, Syne } from "next/font/google"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
 
@@ -7,14 +7,30 @@ import { cn } from "@/lib/utils"
 const fontSans = GeistSans
 const fontMono = GeistMono
 
+const fontHeading = Syne({
+  weight: ["500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-heading-unique",
+})
+
+const fontArabic = Reem_Kufi({
+  weight: ["500", "600", "700"],
+  subsets: ["arabic"],
+  display: "swap",
+  variable: "--font-arabic",
+})
+
 const fontSerif = IBM_Plex_Serif({
   weight: ["400"],
+  subsets: ["latin"],
   display: "swap",
   variable: "--font-serif",
 })
 
-const fontHandwritten = Caveat({
-  weight: ["400", "500"],
+const fontCursive = Great_Vibes({
+  weight: ["400"],
+  subsets: ["latin"],
   display: "swap",
   variable: "--font-handwritten",
 })
@@ -45,7 +61,11 @@ export const fontVariables = cn(
   fontSans.variable,
   fontMono.variable,
   fontSerif.variable,
-  fontHandwritten.variable,
+  fontHeading.variable,
+  fontArabic.variable,
+  fontCursive.variable,
   "[--font-sans:var(--font-geist-sans)]",
-  "[--font-mono:var(--font-geist-mono)]"
+  "[--font-mono:var(--font-geist-mono)]",
+  "[--font-heading:var(--font-heading-unique)]",
+  "[--font-arabic:var(--font-arabic)]"
 )
