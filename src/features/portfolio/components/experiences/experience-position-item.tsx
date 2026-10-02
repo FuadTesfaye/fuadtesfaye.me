@@ -54,7 +54,7 @@ export function ExperiencePositionItem({
         </div>
 
         {/* Separators are aria-hidden: a dl may only expose dt/dd groups, and these dividers are decorative. */}
-        <dl className="flex items-center gap-2 pl-9 text-sm text-muted-foreground">
+        <dl className="flex flex-wrap items-center gap-x-2 gap-y-0.5 pl-9 text-sm text-muted-foreground">
           {position.employmentType && (
             <>
               <div>

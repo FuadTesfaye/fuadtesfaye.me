@@ -22,7 +22,7 @@ export function HelloTitle() {
       <PanelTitle
         as="div"
         id={`${ID}-greeting`}
-        className="py-1 font-cursive text-5xl/tight font-normal tracking-wide select-none sm:text-6xl"
+        className="py-1 font-cursive text-[1.85rem]/tight font-normal tracking-wide select-none min-[340px]:text-4xl/tight min-[380px]:text-5xl/tight sm:text-6xl"
         aria-hidden
         suppressHydrationWarning
       >
