@@ -1,6 +1,6 @@
 import { TECH_STACK } from "../data/tech-stack"
 import type { TechStack as TechStackType } from "../types/tech-stack"
-import { Panel, PanelHeader, PanelTitle } from "./panel"
+import { Panel, PanelHeader, PanelTitle, PanelTitleSup } from "./panel"
 import { PanelTitleCopy } from "./panel-title-copy"
 
 const ID = "stack"
@@ -11,6 +11,7 @@ export function TechStack() {
       <PanelHeader>
         <PanelTitle>
           <a href={`#${ID}`}>Stack</a>
+          <PanelTitleSup>({TECH_STACK.length})</PanelTitleSup>
           <PanelTitleCopy id={ID} />
         </PanelTitle>
       </PanelHeader>
@@ -57,10 +58,10 @@ export function TechStack() {
                           href={item.href}
                           target="_blank"
                           rel="noopener"
-                          className="flex h-(--badge-height) items-center justify-center gap-1.25 rounded-full bg-zinc-50/80 px-2 font-mono text-xs text-foreground inset-ring-1 inset-ring-border dark:bg-zinc-900/80 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0 [&_svg]:text-muted-foreground/80"
+                          className="group flex h-(--badge-height) items-center justify-center gap-1.5 rounded-xs border border-line bg-card/40 px-2.5 font-mono text-xs text-foreground/90 transition-all duration-150 hover:border-foreground/35 hover:bg-card hover:text-foreground [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0 [&_svg]:text-muted-foreground group-hover:[&_svg]:text-foreground"
                         >
                           {item.icon}
-                          {item.title}
+                          <span>{item.title}</span>
                         </a>
                       </li>
                     )

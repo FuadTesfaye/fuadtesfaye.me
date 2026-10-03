@@ -22,4 +22,14 @@ export type Project = {
   icon?: React.ReactElement
   /** Whether the project card is expanded by default in the UI. */
   isExpanded?: boolean
+  /** Architectural domain category. */
+  category?: "ai" | "systems" | "platforms"
+  /** Status indicator label (e.g. "Live App", "Open Source", "Enterprise"). */
+  status?: string
+  /** Direct GitHub source code repository URL if distinct from `link`. */
+  githubUrl?: string
+  /** Key architectural highlight or metric. */
+  highlight?: string
 }
+
+export type ProjectCategory = "all" | "ai" | "systems" | "platforms"
