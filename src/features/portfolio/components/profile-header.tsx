@@ -2,6 +2,7 @@ import { ArabicStar } from "@/components/arabic-star"
 import { USER } from "@/features/portfolio/data/user"
 
 import { FlipSentences } from "./flip-sentences"
+import { HeroHalftoneFlower } from "./hero-halftone-flower"
 import { HeroInteractiveMark } from "./hero-interactive-mark"
 import { PronounceMyName } from "./pronounce-my-name"
 import { VerifiedIcon } from "./verified-icon"
@@ -74,8 +75,14 @@ export function ProfileHeader() {
         </div>
       </div>
 
-      {/* Avatar with precision crop marks */}
+      {/* Right Column: Top-Right Flower Shader + Bottom-Right Avatar */}
       <div className="col-start-2 row-start-3 flex flex-col sm:col-start-2 sm:row-span-2 sm:row-start-2">
+        {/* Top-Right Halftone Flower Shader */}
+        <div className="relative hidden min-h-[160px] w-full flex-1 overflow-hidden border-l border-line sm:flex">
+          <HeroHalftoneFlower />
+        </div>
+
+        {/* Avatar with precision crop marks */}
         <div className="screen-line-top mt-auto shrink-0 border-l border-line">
           <div className="relative p-2 sm:p-3">
             {/* Precision corner crop brackets */}
