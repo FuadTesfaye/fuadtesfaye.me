@@ -13,7 +13,6 @@ import { FloatingCarbonAds } from "@/components/floating-carbon-ads"
 // import { Components } from "@/features/portfolio/components/components"
 import { Education } from "@/features/portfolio/components/education"
 import { Experiences } from "@/features/portfolio/components/experiences"
-import { GitHubContributions } from "@/features/portfolio/components/github-contributions"
 import { Hello } from "@/features/portfolio/components/hello"
 // import {
 //   Insights,
@@ -49,7 +48,6 @@ export default function HomePage() {
 
           <SocialLinks />
           <Overview />
-          <GitHubContributions />
           <Separator pattern="kufic" arabic="إتقان" />
 
           <Hello />

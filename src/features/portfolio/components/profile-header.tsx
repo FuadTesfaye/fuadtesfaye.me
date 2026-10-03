@@ -45,9 +45,9 @@ export function ProfileHeader() {
 
           <div className="px-3 pt-1.5 pb-2 font-mono text-xs text-muted-foreground min-[380px]:px-4 sm:text-[13px]">
             <span className="font-medium text-foreground/90">
-              Chief Technology Officer
+              Full-Stack AI Engineer
             </span>{" "}
-            • Full-Stack Systems Engineer
+            • Backend &amp; Cloud Systems
           </div>
 
           <FlipSentences className="flex min-h-13 items-center border-t border-line py-1.5 pr-2 pl-3 min-[380px]:pl-4 sm:h-9 sm:min-h-9 sm:py-1">

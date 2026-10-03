@@ -4,19 +4,20 @@ export const EDUCATION: Education[] = [
   {
     id: "epsu",
     school: "Ethiopian Public Service University",
-    degree: "Software Engineer Student",
+    degree: "Software Engineering Coursework",
     fieldOfStudy: "Software Engineering",
     period: {
       start: "2022",
+      end: "2026 (Expected)",
     },
-    description: `- Building foundational engineering knowledge essential for real-world software development.
-- Engaging in structured coursework emphasizing web systems, algorithms, and application architecture.`,
+    description: `- Rigorous coursework emphasizing distributed systems, algorithm design, data structures, and enterprise architecture.
+- Hands-on practical engineering translating theoretical computer science into production web platforms.`,
     skills: [
       "Software Engineering",
-      "Web Systems",
+      "Distributed Systems",
       "Algorithms",
-      "Application Architecture",
       "Data Structures",
+      "Application Architecture",
       "Clean Architecture",
     ],
     isExpanded: true,
@@ -30,14 +31,14 @@ export const EDUCATION: Education[] = [
       start: "07.2025",
       end: "09.2025",
     },
-    description: `- Completed a competitive summer program focused entirely on cybersecurity and coding.
-- Refined hands-on skills executing complex security tools, networking protocols, and modern digital technologies.`,
+    description: `- Selected for a competitive national summer program focused on advanced cybersecurity protocols and low-level engineering.
+- Refined hands-on skills executing complex security tooling, networking architectures, and defensive software design.`,
     skills: [
       "Cybersecurity",
       "Networking Protocols",
-      "Security Tools",
-      "Coding",
-      "Information Security",
+      "Security Audits",
+      "Penetration Testing",
+      "Defensive Architecture",
     ],
   },
 ]

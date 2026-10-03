@@ -8,35 +8,145 @@ import {
   TerminalSquareIcon,
 } from "lucide-react"
 
-import { ChanhDaiMark } from "@/components/chanhdai-mark"
-
 import type { Project } from "../types/projects"
 
 export const PROJECTS: Project[] = [
   {
+    id: "algowars",
+    title: "AlgoWars: Neon Syntax",
+    period: {
+      start: "05.2026",
+    },
+    link: "https://v0-algo-wars-3004.vercel.app/",
+    githubUrl: "https://github.com/FuadTesfaye",
+    category: "systems",
+    status: "Vercel Hackathon Winner",
+    highlight:
+      "Global Vercel v0 Hackathon Winner (8,000+ submissions) — server-authoritative deterministic coding strategy with Google Gemini AI tactics",
+    skills: [
+      "Vercel AI SDK",
+      "Google Gemini",
+      "Server-Authoritative",
+      "TypeScript",
+      "Deterministic Simulation",
+      "Game Engine",
+    ],
+    description: `Winner of the global Vercel v0 Hackathon among 8,000+ developer submissions worldwide.
+- Built a real-time multiplayer tactical coding strategy game where players author autonomous algorithms to command units across a dynamic neon grid.
+- Engineered a server-authoritative deterministic simulation engine with zero-latency client prediction, ensuring cheat-proof competitive play.
+- Integrated Google Gemini via the Vercel AI SDK to generate dynamic game scenarios, analyze player tactics, and power an adaptive AI adversary.
+`,
+    icon: <TerminalSquareIcon className="size-4" />,
+    isExpanded: true,
+  },
+  {
+    id: "aria",
+    title: "ARIA — Resort Intelligence Layer",
+    period: {
+      start: "2025",
+    },
+    link: "https://aria-main-98cdc8.free.laravel.cloud/",
+    category: "ai",
+    status: "Multi-Agent Platform",
+    highlight:
+      "Production multi-agent hospitality operations platform with sub-second WebSocket telemetry, OpenAI Realtime voice concierge, and 3D spatial mapping",
+    skills: [
+      "Laravel",
+      "PHP 8.3",
+      "OpenAI Realtime",
+      "WebSockets",
+      "Redis",
+      "Three.js",
+      "MySQL",
+      "Twilio",
+    ],
+    description: `Architected a production-grade multi-agent operations platform for luxury resorts, featuring autonomous guest-experience routing, predictive maintenance scheduling, and real-time staff orchestration.
+- Backend built on Laravel / PHP 8.3 with MySQL, Redis caching, and WebSockets (Pusher/Reverb) for sub-second telemetry delivery.
+- Integrated multi-modal AI pipelines: OpenAI Realtime API for natural conversational concierge, Twilio for SMS/voice dispatch, and deep telemetry analytics.
+- Designed responsive 3D spatial guest maps using Three.js / React Three Fiber embedded in modern blade views.
+`,
+    icon: <GlobeIcon className="size-4" />,
+    isExpanded: true,
+  },
+  {
+    id: "aiqa",
+    title: "AIQA — Autonomous QA Runtime",
+    period: {
+      start: "2026",
+    },
+    link: "https://github.com/FuadTesfaye/AiQa",
+    githubUrl: "https://github.com/FuadTesfaye/AiQa",
+    category: "ai",
+    status: "Autonomous Runtime",
+    highlight:
+      "Evidence-first autonomous QA orchestrator composing 6 browser agents across 5 phases, Playwright MCP, and ISO 29119-4 standards",
+    skills: [
+      "Playwright MCP",
+      "browser-use CLI",
+      "ISO 29119-4",
+      "TypeScript",
+      "Node.js",
+      "Agentic Orchestration",
+    ],
+    description: `Engineered an evidence-first autonomous QA orchestrator that composes 6 specialized browser agents across 5 lifecycle phases (understand, plan, explore, test, report).
+- Clean-state incognito verification engine that executes real-browser exploration, auto-discovers edge cases, and produces reproducible, timestamped test artifacts with video traces.
+- Integrated dual-engine support: browser-use CLI for agentic web navigation and Playwright MCP for deterministic execution.
+- Designed around ISO 29119-4 boundary-value and equivalence-partitioning test standards.
+`,
+    icon: <TerminalSquareIcon className="size-4" />,
+    isExpanded: true,
+  },
+  {
+    id: "insa-fleet",
+    title: "INSA Fleet-Management Platform",
+    period: {
+      start: "06.2025",
+    },
+    link: "https://github.com/FuadTesfaye",
+    githubUrl: "https://github.com/FuadTesfaye",
+    category: "systems",
+    status: "Nationwide Telemetry",
+    highlight:
+      "Nationwide microservices platform with Apache Kafka telemetry streaming and sub-100ms vehicle tracking Next.js dashboards",
+    skills: [
+      "Spring Boot",
+      "Apache Kafka",
+      "PostgreSQL",
+      "Next.js",
+      "TypeScript",
+      "Microservices",
+      "Tailwind CSS",
+    ],
+    description: `Core backend services and operator dashboards for a nationwide fleet-management platform monitoring vehicles in real time.
+- Engineered core backend services using Spring Boot and microservices architecture, integrating Kafka for real-time telemetry streaming and PostgreSQL for persistence.
+- Built high-performance, accessible frontend dashboards with Next.js (App Router), TypeScript, and Tailwind CSS, reducing operator triage time across high-density vehicle tracking views.
+`,
+    icon: <ServerIcon className="size-4" />,
+    isExpanded: true,
+  },
+  {
     id: "procurement",
-    title: "Procurement Management System",
+    title: "INSA Procurement Management System",
     period: {
       start: "01.2026",
     },
     link: "https://github.com/FuadTesfaye",
     githubUrl: "https://github.com/FuadTesfaye",
     category: "systems",
-    status: "Enterprise System",
+    status: "National Enterprise System",
     highlight:
-      "ASP.NET Core microservices with asynchronous RabbitMQ event bus and audited PostgreSQL datastore",
+      "ACID-compliant procurement microservices in C#/.NET with RabbitMQ asynchronous event propagation and Next.js interfaces",
     skills: [
-      "ASP.NET Core",
+      "C# / .NET",
       "Next.js",
       "RabbitMQ",
       "PostgreSQL",
       "Microservices",
       "Enterprise Architecture",
     ],
-    description: `An enterprise-grade microservices platform engineered for securing and automating large-scale procurement workflows.
-- Scalable microservices backend built on ASP.NET Core with asynchronous messaging via RabbitMQ
-- Modern Next.js frontend with clean architecture and role-based access control
-- Secure database interaction and audit logging with PostgreSQL
+    description: `Mission-critical procurement system engineered for national agency workflows ensuring strict compliance and multi-party approval chains.
+- Architected and developed C# / .NET microservices with RabbitMQ for asynchronous event propagation and PostgreSQL datastore.
+- Designed clean RESTful and event-driven APIs connecting Next.js clients to distributed .NET and Spring Boot services, enforcing strict data contracts and sub-100ms response targets.
 `,
     icon: <ServerIcon className="size-4" />,
     isExpanded: true,
@@ -50,34 +160,23 @@ export const PROJECTS: Project[] = [
     link: "https://github.com/FuadTesfaye",
     githubUrl: "https://github.com/FuadTesfaye",
     category: "systems",
-    status: "Open Source CLI",
+    status: "Open Source CLI (MIT)",
     highlight:
-      "Client-side AES-256 encrypted secret transmission with ephemeral single-use generation tokens",
-    skills: ["Node.js", "CLI", "AES-256", "Security", "Cryptography"],
-    description: `A secure CLI for sharing internal secrets using short-lived, one-time generation codes.
-- Zero-leak secret transmission with client-side AES-256 encryption
-- Ephemeral single-use tokens with automated expiration
-- Developer-friendly terminal workflow published for multi-platform environments
+      "Zero-leak secret transmission with client-side AES-256-GCM encryption, HMAC-SHA256 verification, and ephemeral TTL access codes",
+    skills: [
+      "Node.js",
+      "CLI",
+      "AES-256-GCM",
+      "HMAC-SHA256",
+      "Express.js",
+      "MongoDB",
+      "Cryptography",
+    ],
+    description: `Developer-first CLI for transmitting zero-leak environment variables and API keys using ephemeral, single-use access codes.
+- Implemented client-side AES-256-GCM encryption with HMAC-SHA256 integrity verification; secrets never touch servers in plaintext.
+- Architected lightweight backend with Express and MongoDB with automatic TTL-based expiration indices, guaranteeing zero artifact retention after retrieval.
 `,
     icon: <LockIcon className="size-4" />,
-    isExpanded: true,
-  },
-  {
-    id: "portfolio",
-    title: "Modern Developer Portfolio",
-    period: {
-      start: "2024",
-    },
-    link: "https://www.fuadtesfaye.me/",
-    githubUrl: "https://github.com/FuadTesfaye/fuadtesfaye.me",
-    category: "platforms",
-    status: "Production Portfolio",
-    highlight:
-      "Interactive architectural portfolio engineered with Next.js 16, Islamic geometry, and GSAP micro-interactions",
-    skills: ["React", "GSAP", "Three.js", "Tailwind CSS", "TypeScript"],
-    description:
-      "A high-performance portfolio with interactive GSAP animations, particle effects, and rich 3D elements focused on premium UI/UX.",
-    icon: <ChanhDaiMark className="size-4" />,
     isExpanded: true,
   },
   {
@@ -97,23 +196,6 @@ export const PROJECTS: Project[] = [
     icon: <CpuIcon className="size-4" />,
   },
   {
-    id: "aiqa",
-    title: "AIQA Orchestrator",
-    period: {
-      start: "2026",
-    },
-    link: "https://github.com/FuadTesfaye/AiQa",
-    githubUrl: "https://github.com/FuadTesfaye/AiQa",
-    category: "ai",
-    status: "Autonomous Runtime",
-    highlight:
-      "Evidence-first autonomous QA orchestrator integrating Playwright MCP with ISO 29119-4 standards",
-    skills: ["TypeScript", "Node.js", "Playwright MCP", "ISO 29119-4"],
-    description:
-      "An evidence-first autonomous QA runtime and multi-engine orchestrator that composes Playwright MCP, agentic web exploration, and ISO 29119-4 test planning into a unified CLI.",
-    icon: <TerminalSquareIcon className="size-4" />,
-  },
-  {
     id: "web2app",
     title: "web2app",
     period: {
@@ -130,38 +212,6 @@ export const PROJECTS: Project[] = [
     icon: <CodeXmlIcon className="size-4" />,
   },
   {
-    id: "algowars",
-    title: "AlgoWars",
-    period: {
-      start: "2026",
-    },
-    link: "https://v0-algo-wars-3004.vercel.app/",
-    category: "systems",
-    status: "Live Simulation Game",
-    highlight:
-      "Server-authoritative deterministic strategy game with sandboxed algorithm execution",
-    skills: ["JavaScript", "Game Engine", "Server-Authoritative", "Automation"],
-    description:
-      "A server-authoritative tactical strategy game where logic is law. Script unit behaviors, deploy algorithms to a secure sandbox, and outsmart opponents in real-time deterministic simulations.",
-    icon: <TerminalSquareIcon className="size-4" />,
-  },
-  {
-    id: "aria",
-    title: "Aria",
-    period: {
-      start: "2026",
-    },
-    link: "https://aria-main-98cdc8.free.laravel.cloud/",
-    category: "ai",
-    status: "AI Cloud Platform",
-    highlight:
-      "Intelligent automation and dynamic content synthesis engine built on high-performance Laravel cloud",
-    skills: ["Laravel", "PHP", "AI", "Cloud"],
-    description:
-      "An intelligent AI-powered platform built on Laravel infrastructure, delivering smart automation and dynamic content experiences.",
-    icon: <GlobeIcon className="size-4" />,
-  },
-  {
     id: "biomatch",
     title: "BioMatch",
     period: {
@@ -172,10 +222,50 @@ export const PROJECTS: Project[] = [
     status: "Clinical AI Engine",
     highlight:
       "HIPAA-compliant multi-organ compatibility and transplant matching engine validated for medical workflows",
-    skills: ["React", "AI/ML", "DNA Analysis", "HIPAA"],
+    skills: ["React", "AI/ML", "Transplant Matching", "HIPAA"],
     description:
       "Advanced multi-organ AI matching platform for organ transplant compatibility. HIPAA-compliant, clinically validated, and trusted by medical professionals.",
     icon: <ShieldCheckIcon className="size-4" />,
+  },
+  {
+    id: "safehire",
+    title: "SafeHire Ethiopia",
+    period: {
+      start: "2025",
+    },
+    link: "https://labour-link-six.vercel.app/",
+    category: "platforms",
+    status: "National Verification",
+    highlight:
+      "Employment platform connecting Ethiopian workers with verified employers via national Fayda digital ID",
+    skills: ["Next.js", "Fayda ID", "Digital Contracts", "Auth"],
+    description:
+      "Connecting Ethiopian workers with employers through digital contracts and Fayda ID verification. A secure, modern employment platform for the Ethiopian market.",
+    icon: <ShieldCheckIcon className="size-4" />,
+  },
+  {
+    id: "portfolio",
+    title: "Modern Developer Portfolio",
+    period: {
+      start: "2024",
+    },
+    link: "https://www.fuadtesfaye.me/",
+    githubUrl: "https://github.com/FuadTesfaye/fuadtesfaye.me",
+    category: "platforms",
+    status: "Production Portfolio",
+    highlight:
+      "Interactive architectural portfolio engineered with Next.js 16, Islamic geometry, and GSAP micro-interactions",
+    skills: [
+      "React 19",
+      "Next.js 16",
+      "GSAP",
+      "Three.js",
+      "Tailwind CSS v4",
+      "TypeScript",
+    ],
+    description:
+      "A high-performance portfolio with interactive GSAP animations, particle effects, and rich 3D elements focused on premium UI/UX.",
+    icon: <CodeXmlIcon className="size-4" />,
   },
   {
     id: "agentavis",
@@ -224,22 +314,6 @@ export const PROJECTS: Project[] = [
     description:
       "A beautifully crafted Arabic literary platform for poetry and rhyme exploration, featuring elegant typography and cultural design language.",
     icon: <GlobeIcon className="size-4" />,
-  },
-  {
-    id: "safehire",
-    title: "SafeHire Ethiopia",
-    period: {
-      start: "2025",
-    },
-    link: "https://labour-link-six.vercel.app/",
-    category: "platforms",
-    status: "National Verification",
-    highlight:
-      "Employment platform connecting Ethiopian workers with verified employers via national Fayda digital ID",
-    skills: ["Next.js", "Fayda ID", "Digital Contracts", "Auth"],
-    description:
-      "Connecting Ethiopian workers with employers through digital contracts and Fayda ID verification. A secure, modern employment platform for the Ethiopian market.",
-    icon: <ShieldCheckIcon className="size-4" />,
   },
   {
     id: "sovereign",

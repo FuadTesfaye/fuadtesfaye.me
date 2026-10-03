@@ -1,11 +1,9 @@
 "use client"
 
 import React, { useCallback, useEffect, useMemo, useState } from "react"
-import { copyToClipboardWithEvent } from "@/utils/copy"
 import { useRouter } from "@bprogress/next/app"
 import { PenTool03Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { useTiks } from "@rexa-developer/tiks/react"
 import {
   AwardIcon,
   BookmarkIcon,
@@ -15,16 +13,15 @@ import {
   DownloadIcon,
   FileTextIcon,
   GraduationCapIcon,
+  HomeIcon,
   LayersIcon,
   LineChartIcon,
   MonitorIcon,
   MoonStarIcon,
   QuoteIcon,
   RssIcon,
-  SquareDashedIcon,
   SunMediumIcon,
   TextInitialIcon,
-  TypeIcon,
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useHotkeys } from "react-hotkeys-hook"
@@ -41,7 +38,7 @@ import {
   CommandList,
   CommandShortcut,
 } from "@/components/ui/command"
-import { toast } from "@/components/ui/toast"
+import { ArabicStar } from "@/components/arabic-star"
 import { trackBookmarkClick } from "@/features/bookmark/lib/analytics"
 import { getBookmarkExternalHref } from "@/features/bookmark/lib/bookmark-link"
 import type { BookmarkPreview } from "@/features/bookmark/types"
@@ -50,8 +47,6 @@ import type { DocPreview } from "@/features/doc/types/document"
 import { SOCIAL_ICONS } from "@/features/portfolio/components/social-link-icons"
 import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
 
-import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark"
-import { getWordmarkSVG } from "./chanhdai-wordmark"
 import {
   FavouriteIcon,
   GridViewIcon,
@@ -92,7 +87,7 @@ const MENU_LINKS: CommandLinkItem[] = [
     title: "Home",
     href: "/",
     kind: "page",
-    icon: <ChanhDaiMark />,
+    icon: <HomeIcon />,
     shortcut: "GH",
   },
   {
@@ -244,9 +239,6 @@ export function CommandMenu({
     useState<CommandKind | null>(null)
 
   const [click] = useClickSound()
-
-  const { success: tiksSuccess } = useTiks()
-
   useHotkeys(
     "mod+k, slash",
     (e) => {
@@ -289,23 +281,6 @@ export function CommandMenu({
     },
     [router]
   )
-
-  const handleCopyText = useCallback(
-    (text: string, message: string) => {
-      setOpen(false)
-      copyToClipboardWithEvent(text, {
-        name: "command_menu_action",
-        properties: {
-          action: "copy",
-          text: text,
-        },
-      })
-      toast.add({ type: "success", title: message })
-      tiksSuccess()
-    },
-    [tiksSuccess]
-  )
-
   const createThemeHandler = useCallback(
     (theme: "light" | "dark" | "system") => () => {
       click()
@@ -504,48 +479,6 @@ export function CommandMenu({
               onLinkHighlight={handleLinkHighlight}
               onLinkSelect={handleOpenLink}
             />
-
-            <CommandGroup heading="Brand Assets">
-              <CommandMenuItem
-                onHighlight={handleCommandHighlight}
-                onSelect={() => {
-                  handleCopyText(getMarkSVG(), "Mark as SVG copied")
-                }}
-              >
-                <ChanhDaiMark />
-                Copy Mark as SVG
-              </CommandMenuItem>
-
-              <CommandMenuItem
-                onHighlight={handleCommandHighlight}
-                onSelect={() => {
-                  handleCopyText(getWordmarkSVG(), "Logotype as SVG copied")
-                }}
-              >
-                <TypeIcon />
-                Copy Logotype as SVG
-              </CommandMenuItem>
-
-              <CommandMenuItem
-                onHighlight={() => {
-                  setSelectedCommandKind("link")
-                }}
-                onSelect={() => handleOpenLink("/blog/chanhdai-brand")}
-              >
-                <SquareDashedIcon />
-                Brand Guidelines
-              </CommandMenuItem>
-
-              <CommandMenuItem onHighlight={handleCommandHighlight} asChild>
-                <a
-                  href="https://assets.chanhdai.com/chanhdai-brand.zip"
-                  download
-                >
-                  <DownloadIcon />
-                  Download Brand Assets
-                </a>
-              </CommandMenuItem>
-            </CommandGroup>
 
             <CommandGroup heading="Theme">
               <CommandMenuItem
@@ -747,7 +680,10 @@ function CommandMenuFooter({
       <div className="flex h-10" />
 
       <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 rounded-b-2xl px-4 text-xs font-medium">
-        <ChanhDaiMark className="size-6 text-muted-foreground" />
+        <div className="flex items-center gap-1.5 text-muted-foreground/70">
+          <ArabicStar className="size-3.5" />
+          <span className="font-arabic text-xs font-bold">فُؤَيْد</span>
+        </div>
 
         <div className="flex items-center gap-2 max-sm:hidden">
           <span>{ENTER_ACTION_LABELS[selectedCommandKind ?? "page"]}</span>

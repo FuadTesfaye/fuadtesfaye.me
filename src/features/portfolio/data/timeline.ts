@@ -42,18 +42,18 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
   },
   {
     year: 2025,
-    content: `Selected for the National Ethio Cyber Talent Summer Camp by INSA (Information Network Security Administration).
+    content: `Joined INSA as a Full-Stack Developer building nationwide fleet-management and procurement microservices.
 
-Joined Fusion IT Consultancy as a Full-Stack Developer.
+Selected for the National Ethio Cyber Talent Summer Camp and awarded the Safaricom Talent Cloud Scholarship.
 
-Released [Keyshare](https://github.com/FuadTesfaye), BioMatch, COMPUTE, and SafeHire Ethiopia.`,
+Developed ARIA Autonomous Resort Intelligence Layer, Keyshare (AES-256 CLI), and BioMatch.`,
   },
   {
     year: 2026,
-    content: `Appointed Chief Technology Officer at Zion Software Agency, directing technical strategy and engineering architecture.
+    content: `Founding Engineer at Zion Software Agency directing technical strategy, hospital EHR/HIMS architecture, and intern mentorship.
 
-Engineered the enterprise Procurement Management System microservices platform.
+Won the global Vercel v0 Hackathon (AlgoWars) out of 8,000+ submissions worldwide.
 
-Launched The Dagmawi Dispatch, AIQA Orchestrator, AlgoWars, and web2app.`,
+Engineered AIQA Autonomous QA Runtime, The Dagmawi Dispatch, and web2app.`,
   },
 ]

@@ -7,35 +7,38 @@ export const USER: User = {
   username: "FuadTesfaye",
   gender: "male",
   pronouns: "he/him",
-  bio: "Full-Stack Software Engineer Building Modern Web Products",
+  bio: "Full-Stack AI Engineer | Backend & Cloud Systems",
   flipSentences: [
-    "Full-Stack Software Engineer Building Modern Web Products.",
-    "Specializing in MERN, Next.js, and Clean Architecture.",
-    "Chief Technology Officer at Zion Software Agency.",
-    "Open to opportunities — Addis Ababa, Ethiopia.",
+    "Full-Stack AI Engineer & Cloud Systems Architect.",
+    "Winner of the Vercel v0 Global Hackathon (AlgoWars).",
+    "Founding Engineer at Zion Software Agency.",
+    "Building mission-critical microservices at INSA.",
+    "Open to remote engineering opportunities worldwide.",
   ],
   address: "Addis Ababa, Ethiopia",
-  phoneNumberB64: "KzI1MTk0MDE2NTUwMw==", // +251940165503 base64 encoded
-  emailB64: "ZnVhZHRlc2ZheWVAZ21haWwuY29t", // fuadtesfaye@gmail.com base64 encoded
+  phoneNumberB64: "KzI1MTkyNDExMzA4Ng==", // +251924113086 base64 encoded
+  emailB64: "ZnVhZHRlc2ZheWUyNEBnbWFpbC5jb20=", // fuadtesfaye24@gmail.com base64 encoded
   website: "https://www.fuadtesfaye.me",
-  jobTitle: "Full-Stack Software Engineer & AI Automation Developer",
+  jobTitle: "Full-Stack AI Engineer | Backend & Cloud Systems",
   jobs: [
     {
-      title: "Chief Technology Officer",
+      title: "Founding Engineer",
       company: "Zion Software Agency",
       website: "https://www.fuadtesfaye.me",
       experienceId: "zion",
     },
     {
       title: "Full-Stack Developer",
-      company: "Fusion IT Consultancy",
+      company: "INSA",
       website: "https://www.fuadtesfaye.me",
-      experienceId: "fusion-it",
+      experienceId: "insa",
     },
   ],
-  about: `- Dedicated Full-Stack Software Engineer with over 3 years of experience specializing in the MERN stack, Next.js, and enterprise-grade backend architecture.
-- Diverse skill set ranging from UI/UX precision and front-end polish using GSAP and Three.js, to scalable backend systems using Node.js and ASP.NET Core, delivering high-quality, full-scale web applications.
-- Maintaining a track record of 10+ completed projects with a 100% client satisfaction rate.
+  about: `- Full-stack and backend engineer with 3+ years designing production-grade, distributed, and AI-native systems across microservices, event-driven architectures, and high-concurrency environments.
+- Built mission-critical systems for national programs (fleet management, procurement) handling thousands of transactions.
+- Winner of the Vercel v0 Global Hackathon (AlgoWars) out of 8,000+ submissions worldwide.
+- Deeply skilled in Next.js, Node.js/Express, Spring Boot, C#/.NET, Python, and multi-agent AI orchestration.
+- Experienced leading engineering teams, driving technical strategy, and delivering end-to-end solutions from architecture to cloud deployment.
 `,
   avatar: "https://avatars.githubusercontent.com/u/155218084?v=4",
   avatarSketch: "https://avatars.githubusercontent.com/u/155218084?v=4",
@@ -53,11 +56,14 @@ export const USER: User = {
     "fuad",
     "tesfaye",
     "fuadtesfaye",
-    "full-stack software engineer",
-    "ai automation developer",
-    "mern stack",
+    "full-stack ai engineer",
+    "backend engineer",
+    "cloud systems",
+    "microservices",
+    "spring boot",
+    "asp.net core",
     "next.js",
-    "clean architecture",
+    "algowars",
     "addis ababa",
     "ethiopia",
   ],

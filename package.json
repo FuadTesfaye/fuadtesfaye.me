@@ -1,21 +1,14 @@
 {
   "name": "fuadtesfaye.me",
   "version": "0.1.0",
-  "description": "Full-Stack Software Engineer & AI Automation Developer Portfolio.",
+  "description": "Full-Stack AI Engineer | Backend & Cloud Systems Portfolio.",
   "homepage": "https://www.fuadtesfaye.me",
   "license": "MIT",
   "author": {
     "name": "Fuad Tesfaye",
-    "email": "fuadtesfaye@gmail.com",
+    "email": "fuadtesfaye24@gmail.com",
     "url": "https://github.com/FuadTesfaye"
   },
-  "contributors": [
-    {
-      "name": "Fuad Tesfaye",
-      "email": "fuadtesfaye@gmail.com",
-      "url": "https://github.com/FuadTesfaye"
-    }
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FuadTesfaye/fuadtesfaye.me.git"
