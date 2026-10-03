@@ -51,7 +51,7 @@ export function HeroInteractiveMark() {
               fill="none"
               stroke="var(--stroke)"
               strokeWidth="0.5"
-              strokeOpacity="0.25"
+              strokeOpacity="0.2"
             />
           </pattern>
 
@@ -101,15 +101,15 @@ export function HeroInteractiveMark() {
           width="648"
           height="258"
           fill={`url(#${gridPatternId})`}
-          opacity="0.6"
+          opacity="0.5"
         />
 
-        {/* Blueprint outer boundary & crosshair frame */}
+        {/* Blueprint outer boundary */}
         <g
           stroke="var(--stroke)"
           strokeWidth="0.8"
           strokeDasharray="4 4"
-          opacity="0.5"
+          opacity="0.4"
         >
           <line x1="16" y1="16" x2="664" y2="16" />
           <line x1="16" y1="274" x2="664" y2="274" />
@@ -117,48 +117,15 @@ export function HeroInteractiveMark() {
           <line x1="664" y1="16" x2="664" y2="274" />
         </g>
 
-        {/* Corner alignment crosshairs */}
-        <g stroke="var(--foreground)" strokeWidth="1" opacity="0.35">
-          <path d="M12 16h8M16 12v8" />
-          <path d="M660 16h8M664 12v8" />
-          <path d="M12 274h8M16 270v8" />
-          <path d="M660 274h8M664 270v8" />
-        </g>
-
         {/* Subtle architectural background calligraphy watermark */}
         <text
           x="340"
-          y="188"
+          y="195"
           textAnchor="middle"
-          className="pointer-events-none fill-foreground/[0.035] font-arabic text-[190px] font-bold select-none dark:fill-foreground/4.5"
+          className="pointer-events-none fill-foreground/3 font-arabic text-[210px] font-bold select-none dark:fill-foreground/4"
           aria-hidden
         >
           فُؤَيْد
-        </text>
-
-        {/* Top Technical Telemetry Readouts */}
-        <text
-          x="26"
-          y="32"
-          className="fill-muted-foreground/75 font-mono text-[9px] tracking-widest uppercase"
-        >
-          SYS // CAD-SPEC • FU&apos;AYD (فُؤَيْد) • MK-VI
-        </text>
-        <text
-          x="340"
-          y="32"
-          textAnchor="middle"
-          className="fill-muted-foreground/50 font-mono text-[8.5px] tracking-wider uppercase max-sm:hidden"
-        >
-          {"⊕ 09°01'48\"N  38°44'24\"E // ADDIS ABABA"}
-        </text>
-        <text
-          x="654"
-          y="32"
-          textAnchor="end"
-          className="fill-muted-foreground/75 font-mono text-[9px] tracking-widest uppercase"
-        >
-          TOLERANCE ±0.01mm // ACTIVE
         </text>
 
         {/* Wide Isometric Base Pedestal (Fixed Deck) */}
@@ -185,7 +152,7 @@ export function HeroInteractiveMark() {
             stroke="var(--stroke)"
           />
 
-          {/* Front lip illuminated optic status channel */}
+          {/* Front lip optic status channel */}
           <line
             x1="74"
             y1="168"
@@ -256,7 +223,7 @@ export function HeroInteractiveMark() {
             opacity="0.75"
           />
 
-          {/* Left Wing: Tactile Machined Grooves & Calibration Gauge */}
+          {/* Left Wing: Tactile Machined Grooves */}
           <g stroke="var(--stroke-hi)" strokeWidth="0.7" opacity="0.6">
             <line x1="140" y1="135" x2="200" y2="152" />
             <line x1="146" y1="130" x2="206" y2="147" />
@@ -264,43 +231,7 @@ export function HeroInteractiveMark() {
             <line x1="158" y1="120" x2="218" y2="137" />
           </g>
 
-          <g className="pointer-events-none select-none">
-            {/* Left Wing Technical Inscription */}
-            <text
-              x="170"
-              y="112"
-              className="fill-muted-foreground/75 font-mono text-[8px] tracking-wider uppercase"
-            >
-              ACTUATOR // 45 cN
-            </text>
-            <text
-              x="170"
-              y="122"
-              className="fill-muted-foreground/50 font-mono text-[7.5px] tracking-widest uppercase"
-            >
-              SPRING: CuBe • DUAL-STAGE
-            </text>
-
-            {/* Right Wing Technical Inscription */}
-            <text
-              x="510"
-              y="112"
-              textAnchor="end"
-              className="fill-muted-foreground/75 font-mono text-[8px] tracking-wider uppercase"
-            >
-              ITQĀN // إتقان (MASTERY)
-            </text>
-            <text
-              x="510"
-              y="122"
-              textAnchor="end"
-              className="fill-muted-foreground/50 font-mono text-[7.5px] tracking-widest uppercase"
-            >
-              {"DATUM [A-1] • SPEC 2026"}
-            </text>
-          </g>
-
-          {/* Right Wing: Metric Stepper / Bargraph */}
+          {/* Right Wing: Metric Stepper Grooves */}
           <g stroke="var(--stroke-hi)" strokeWidth="0.7" opacity="0.6">
             <line x1="480" y1="152" x2="540" y2="135" />
             <line x1="474" y1="147" x2="534" y2="130" />
@@ -314,18 +245,18 @@ export function HeroInteractiveMark() {
             <circle
               cx="340"
               cy="140"
-              r="40"
+              r="44"
               fill="var(--background)"
               stroke="var(--stroke)"
               strokeWidth="1.2"
-              className="fill-background/80 backdrop-blur-xs"
+              className="fill-background/85 backdrop-blur-xs"
             />
             {/* Concentric 8-point geometric star ring */}
             <rect
-              x="315"
-              y="115"
-              width="50"
-              height="50"
+              x="313"
+              y="113"
+              width="54"
+              height="54"
               fill="none"
               stroke="var(--stroke)"
               strokeWidth="0.75"
@@ -333,10 +264,10 @@ export function HeroInteractiveMark() {
               opacity="0.8"
             />
             <rect
-              x="315"
-              y="115"
-              width="50"
-              height="50"
+              x="313"
+              y="113"
+              width="54"
+              height="54"
               fill="none"
               stroke="var(--stroke)"
               strokeWidth="0.75"
@@ -348,19 +279,11 @@ export function HeroInteractiveMark() {
             {/* Sculpted Arabic Calligraphy: Fu'ayd (فُؤَيْد) */}
             <text
               x="340"
-              y="152"
+              y="156"
               textAnchor="middle"
-              className="fill-foreground font-arabic text-[44px] font-bold tracking-normal select-none"
+              className="fill-foreground font-arabic text-[50px] font-bold tracking-normal select-none"
             >
               فُؤَيْد
-            </text>
-            <text
-              x="340"
-              y="170"
-              textAnchor="middle"
-              className="fill-muted-foreground/80 font-mono text-[8px] font-medium tracking-[0.22em] uppercase select-none"
-            >
-              {"FU'AYD // HEART & INTELLECT"}
             </text>
           </g>
 
@@ -373,30 +296,6 @@ export function HeroInteractiveMark() {
             strokeWidth="1.2"
           />
         </motion.g>
-
-        {/* Bottom Dimension Span Callout Line */}
-        <g stroke="var(--stroke)" strokeWidth="0.75" opacity="0.45">
-          <line x1="95" y1="262" x2="585" y2="262" />
-          <path d="M95 258v8M585 258v8M340 259v6" />
-        </g>
-        <text
-          x="340"
-          y="272"
-          textAnchor="middle"
-          className="fill-muted-foreground/60 font-mono text-[8px] tracking-widest uppercase select-none"
-        >
-          {"|◄—————— SPAN: 490.00 mm (PRECISION TACTILE APERTURE) ——————►|"}
-        </text>
-
-        {/* Lower Right Figure Caption */}
-        <text
-          x="654"
-          y="262"
-          textAnchor="end"
-          className="fill-muted-foreground/60 font-mono text-[9px] tracking-wider uppercase select-none max-sm:hidden"
-        >
-          FIG. 1.0 // ITQĀN (إتقان) WIDE SWITCH
-        </text>
       </motion.svg>
 
       {/* Cursive annotation pointing to the switch */}

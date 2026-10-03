@@ -8,18 +8,6 @@ const ID = "stack"
 export function TechStack() {
   return (
     <Panel id={ID}>
-      <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-2 font-mono text-[10px] tracking-widest text-muted-foreground uppercase sm:text-[11px]">
-        <span>SECTION // 04</span>
-        <span className="flex items-center gap-1.5">
-          <span className="font-arabic text-xs font-bold text-foreground/80">
-            كفاءة
-          </span>
-          <span className="text-muted-foreground/40">•</span>
-          <span>TECHNICAL ARSENAL</span>
-        </span>
-        <span>SPEC SHEET // 2026</span>
-      </div>
-
       <PanelHeader>
         <PanelTitle>
           <a href={`#${ID}`}>Stack</a>

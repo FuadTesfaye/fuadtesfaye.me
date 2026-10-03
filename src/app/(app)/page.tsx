@@ -45,17 +45,17 @@ export default function HomePage() {
       <div className="[--separator-height:--spacing(10)] **:data-[slot=panel]:scroll-mt-[calc(var(--header-height)+var(--separator-height))]">
         <div className="mx-auto md:max-w-5xl">
           <ProfileHeader />
-          <Separator pattern="girih" arabic="فُؤَيْد" latin="DOSSIER" />
+          <Separator pattern="girih" arabic="فُؤَيْد" />
 
           <SocialLinks />
           <Overview />
           <GitHubContributions />
-          <Separator pattern="kufic" arabic="إتقان" latin="CADENCE" />
+          <Separator pattern="kufic" arabic="إتقان" />
 
           <Hello />
           {/* <SponsorsCarousel /> */}
           {/* <Testimonials /> */}
-          <Separator pattern="mashrabiya" arabic="فلسفة" latin="PHILOSOPHY" />
+          <Separator pattern="mashrabiya" arabic="فلسفة" />
 
           {/* <Components /> */}
           {/* <Separator /> */}
@@ -67,16 +67,16 @@ export default function HomePage() {
           {/* <Separator /> */}
 
           <TechStack />
-          <Separator pattern="shamsa" arabic="كفاءة" latin="ARSENAL" />
+          <Separator pattern="shamsa" arabic="كفاءة" />
 
           <Experiences />
-          <Separator pattern="muqarnas" arabic="مسيرة" latin="CHRONOLOGY" />
+          <Separator pattern="muqarnas" arabic="مسيرة" />
 
           <Education />
-          <Separator pattern="zellij" arabic="معارف" latin="ACADEMIA" />
+          <Separator pattern="zellij" arabic="معارف" />
 
           <Projects />
-          <Separator pattern="arabesque" arabic="إنجاز" latin="WORKS" />
+          <Separator pattern="arabesque" arabic="إنجاز" />
 
           {/* <Recognition /> */}
           {/* <Separator /> */}
@@ -119,7 +119,6 @@ type SeparatorPattern =
 type SeparatorProps = {
   className?: string
   arabic?: string
-  latin?: string
   pattern?: SeparatorPattern
 }
 
@@ -134,12 +133,7 @@ const PATTERN_CLASS_MAP: Record<SeparatorPattern, string> = {
   frieze: "stripe-divider-frieze",
 }
 
-function Separator({
-  className,
-  arabic,
-  latin,
-  pattern = "girih",
-}: SeparatorProps) {
+function Separator({ className, arabic, pattern = "girih" }: SeparatorProps) {
   const patternClass = PATTERN_CLASS_MAP[pattern] ?? "stripe-divider"
 
   return (
@@ -150,20 +144,6 @@ function Separator({
         className
       )}
     >
-      {/* Precision corner crosshair datum marks */}
-      <div
-        className="pointer-events-none absolute -top-1.5 -left-1.5 z-2 flex size-3 items-center justify-center font-mono text-[10px] text-muted-foreground/45 select-none"
-        aria-hidden
-      >
-        +
-      </div>
-      <div
-        className="pointer-events-none absolute -top-1.5 -right-1.5 z-2 flex size-3 items-center justify-center font-mono text-[10px] text-muted-foreground/45 select-none"
-        aria-hidden
-      >
-        +
-      </div>
-
       {/* Architectural center seal / medallion */}
       {arabic && (
         <div className="z-1 flex items-center gap-2 border border-line bg-background/95 px-3.5 py-1 shadow-2xs backdrop-blur-xs select-none">
@@ -171,14 +151,6 @@ function Separator({
           <span className="font-arabic text-sm font-bold tracking-normal text-foreground/90">
             {arabic}
           </span>
-          {latin && (
-            <>
-              <span className="text-[10px] text-muted-foreground/40">•</span>
-              <span className="font-mono text-[10px] font-medium tracking-widest text-muted-foreground uppercase sm:text-[11px]">
-                {latin}
-              </span>
-            </>
-          )}
           <ArabicStar className="size-3.5 text-muted-foreground/50" />
         </div>
       )}

@@ -55,22 +55,12 @@ export function SiteFooterCad() {
               <span className="font-arabic text-sm font-bold tracking-normal text-foreground/90">
                 خاتمة
               </span>
-              <span className="text-[10px] text-muted-foreground/40">•</span>
-              <span className="font-mono text-[10px] font-medium tracking-widest text-muted-foreground uppercase sm:text-[11px]">
-                COLOPHON // 2026
-              </span>
               <ArabicStar className="size-3.5 text-muted-foreground/50" />
             </div>
           </div>
         </div>
 
         <div className="relative">
-          <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-2 font-mono text-[10px] tracking-widest text-muted-foreground uppercase sm:text-[11px]">
-            <span>COLOPHON // 2026</span>
-            <span>خاتمة • ARCHITECTURAL SPECIFICATION</span>
-            <span>fuadtesfaye.me</span>
-          </div>
-
           <div className="screen-line-bottom flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-4 py-3 font-mono text-sm">
             <span className="font-medium">{SITE_TITLE}</span>
             <span className="font-sans text-muted-foreground">

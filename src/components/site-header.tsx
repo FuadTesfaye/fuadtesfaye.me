@@ -44,9 +44,6 @@ export function SiteHeader() {
             <span className="font-name text-xl font-normal tracking-wide text-foreground transition-colors group-hover:text-foreground/80">
               Fuad
             </span>
-            <span className="hidden items-center rounded-none border border-line bg-muted/30 px-2.5 py-0.5 font-mono text-[10px] font-medium tracking-widest text-muted-foreground uppercase sm:inline-flex sm:text-[11px]">
-              CTO @ ZION
-            </span>
           </div>
         </Link>
 
@@ -75,32 +72,6 @@ export function SiteHeader() {
             className="mx-1 opacity-60 data-vertical:h-4 data-vertical:self-center"
           />
           <ThemeToggle />
-        </div>
-
-        {/* Precision corner crosshairs */}
-        <div
-          className="pointer-events-none absolute -top-1 -left-1 z-2 flex size-2 items-center justify-center font-mono text-[9px] text-muted-foreground/35 select-none"
-          aria-hidden
-        >
-          +
-        </div>
-        <div
-          className="pointer-events-none absolute -top-1 -right-1 z-2 flex size-2 items-center justify-center font-mono text-[9px] text-muted-foreground/35 select-none"
-          aria-hidden
-        >
-          +
-        </div>
-        <div
-          className="pointer-events-none absolute -bottom-1 -left-1 z-2 flex size-2 items-center justify-center font-mono text-[9px] text-muted-foreground/35 select-none"
-          aria-hidden
-        >
-          +
-        </div>
-        <div
-          className="pointer-events-none absolute -right-1 -bottom-1 z-2 flex size-2 items-center justify-center font-mono text-[9px] text-muted-foreground/35 select-none"
-          aria-hidden
-        >
-          +
         </div>
       </div>
     </header>

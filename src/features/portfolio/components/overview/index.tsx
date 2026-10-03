@@ -1,6 +1,5 @@
 import { MapPinIcon } from "lucide-react"
 
-import { ArabicStar } from "@/components/arabic-star"
 import { USER } from "@/features/portfolio/data/user"
 
 import { Panel, PanelContent } from "../panel"
@@ -21,19 +20,6 @@ export function Overview() {
       id="contact"
       className="screen-line-bottom-none screen-line-top-none"
     >
-      <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-2 font-mono text-[10px] tracking-widest text-muted-foreground uppercase sm:text-[11px]">
-        <span>SECTION // 01</span>
-        <span className="flex items-center gap-1.5">
-          <ArabicStar className="size-3 text-muted-foreground/60" />
-          <span className="font-arabic text-xs font-bold text-foreground/80">
-            مُعطَيات
-          </span>
-          <span className="text-muted-foreground/40">•</span>
-          <span>DOSSIER SPECIFICATION</span>
-        </span>
-        <span>CHANNELS // VERIFIED</span>
-      </div>
-
       <h2 className="sr-only">Overview</h2>
 
       <PanelContent className="grid gap-x-4 gap-y-2.5 sm:grid-cols-2">

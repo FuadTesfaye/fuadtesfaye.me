@@ -59,8 +59,12 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
               {experience.isCurrentEmployer && (
                 <>
                   <dt className="sr-only">Employment status</dt>
-                  <dd className="py-0.2 ml-1 inline-flex items-center rounded-sm border border-line bg-muted/40 px-1 font-mono text-[9px] font-medium tracking-widest text-muted-foreground uppercase">
-                    CURRENT
+                  <dd>
+                    <span className="sr-only">Current</span>
+                    <span className="relative flex size-2.5 translate-px items-center justify-center">
+                      <span className="absolute inline-flex size-2.5 animate-ping rounded-full bg-info opacity-50" />
+                      <span className="relative inline-flex size-1.5 rounded-full bg-info" />
+                    </span>
                   </dd>
                 </>
               )}

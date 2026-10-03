@@ -42,20 +42,6 @@ export function HeroHalftoneFlower() {
 
   return (
     <div className="relative flex size-full items-center justify-center overflow-hidden bg-background select-none">
-      {/* Precision corner crop brackets */}
-      <div className="pointer-events-none absolute top-1.5 left-1.5 z-2 font-mono text-[8px] text-muted-foreground/35 select-none">
-        ⌜
-      </div>
-      <div className="pointer-events-none absolute top-1.5 right-1.5 z-2 font-mono text-[8px] text-muted-foreground/35 select-none">
-        ⌝
-      </div>
-      <div className="pointer-events-none absolute bottom-1.5 left-1.5 z-2 font-mono text-[8px] text-muted-foreground/35 select-none">
-        ⌞
-      </div>
-      <div className="pointer-events-none absolute right-1.5 bottom-1.5 z-2 font-mono text-[8px] text-muted-foreground/35 select-none">
-        ⌟
-      </div>
-
       {/* Halftone Flower Shader Canvas */}
       <HalftoneDots
         width="100%"
