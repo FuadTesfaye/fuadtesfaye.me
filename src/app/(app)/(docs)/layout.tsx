@@ -5,7 +5,7 @@ export default function DocsLayout({
 }) {
   return (
     <>
-      <div className="mx-auto h-12 border-x md:max-w-4xl" />
+      <div className="mx-auto h-12 border-x md:max-w-5xl" />
       {children}
     </>
   )

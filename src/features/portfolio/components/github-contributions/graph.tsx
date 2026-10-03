@@ -65,20 +65,20 @@ export function GitHubContributionGraph({
       <ContributionGraph
         className={cn(
           "mx-auto gap-4 py-4",
-          '**:data-[level="0"]:fill-[#ebedf0] dark:**:data-[level="0"]:fill-[#131622]',
-          '**:data-[level="1"]:fill-[#cbd5e1] dark:**:data-[level="1"]:fill-[#252a3d]',
-          '**:data-[level="2"]:fill-[#94a3b8] dark:**:data-[level="2"]:fill-[#3d4666]',
-          '**:data-[level="3"]:fill-[#64748b] dark:**:data-[level="3"]:fill-[#6e7c9e]',
-          '**:data-[level="4"]:fill-[#1e293b] dark:**:data-[level="4"]:fill-[#cbd5e1]'
+          '**:data-[level="0"]:fill-[#ebedf0] dark:**:data-[level="0"]:fill-[#141724]',
+          '**:data-[level="1"]:fill-[#cbd5e1] dark:**:data-[level="1"]:fill-[#242a42]',
+          '**:data-[level="2"]:fill-[#94a3b8] dark:**:data-[level="2"]:fill-[#3e4870]',
+          '**:data-[level="3"]:fill-[#64748b] dark:**:data-[level="3"]:fill-[#6d7ca8]',
+          '**:data-[level="4"]:fill-[#1e293b] dark:**:data-[level="4"]:fill-[#e2e8f0]'
         )}
         data={data}
-        blockSize={12}
-        blockMargin={2}
-        blockRadius={2}
+        blockSize={15}
+        blockMargin={3}
+        blockRadius={2.5}
         aria-label="GitHub Contributions Graph"
       >
         <ContributionGraphCalendar
-          className="px-4 **:data-[slot=month-labels]:text-muted-foreground"
+          className="px-4 **:data-[slot=month-labels]:text-xs **:data-[slot=month-labels]:text-muted-foreground"
           title="GitHub Contributions"
           aria-hidden
         >

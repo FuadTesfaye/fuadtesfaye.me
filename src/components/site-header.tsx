@@ -3,7 +3,6 @@ import Link from "next/link"
 
 import { MAIN_NAV } from "@/config/site"
 import { Separator } from "@/components/ui/separator"
-import { ChanhDaiMark } from "@/components/chanhdai-mark"
 import { NavDesktop } from "@/components/nav-desktop"
 import { NavItemGitHub } from "@/components/nav-item-github"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -35,21 +34,17 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 max-w-screen overflow-x-clip bg-background/80 px-2 backdrop-blur-md transition-all supports-backdrop-filter:bg-background/60">
-      <div className="screen-line-top screen-line-bottom relative mx-auto flex h-(--header-height) items-center gap-2 border-x screen-line-bottom-border screen-line-top-border pr-2 pl-3 group-has-data-[slot=layout-wide]/layout:container after:z-1 sm:gap-4 sm:pl-4 md:max-w-4xl">
+      <div className="screen-line-top screen-line-bottom relative mx-auto flex h-(--header-height) items-center gap-2 border-x screen-line-bottom-border screen-line-top-border pr-2 pl-3 group-has-data-[slot=layout-wide]/layout:container after:z-1 sm:gap-4 sm:pl-4 md:max-w-5xl">
         <Link
           href="/"
           aria-label="Fuad Tesfaye Home"
           className="group flex items-center gap-2.5 transition-opacity outline-none select-none hover:opacity-90"
         >
-          <div className="relative flex items-center">
-            <ChanhDaiMark className="h-6 shrink-0 transition-transform duration-300 group-hover:scale-105 group-active:scale-95" />
-          </div>
           <div className="flex items-center gap-2">
-            <span className="font-name text-lg font-normal tracking-wide text-foreground transition-colors group-hover:text-foreground/80">
+            <span className="font-name text-xl font-normal tracking-wide text-foreground transition-colors group-hover:text-foreground/80">
               Fuad
             </span>
-            <span className="hidden items-center gap-1.5 rounded-none border border-line bg-muted/30 px-2 py-0.5 font-mono text-[9px] font-medium tracking-widest text-muted-foreground uppercase sm:inline-flex">
-              <span className="size-1 bg-foreground/60" />
+            <span className="hidden items-center rounded-none border border-line bg-muted/30 px-2.5 py-0.5 font-mono text-[10px] font-medium tracking-widest text-muted-foreground uppercase sm:inline-flex sm:text-[11px]">
               CTO @ ZION
             </span>
           </div>

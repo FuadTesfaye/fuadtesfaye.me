@@ -33,7 +33,7 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
         </div>
 
         <div className="flex min-w-0 flex-1 flex-col gap-x-3 gap-y-1 pr-1 sm:flex-row sm:items-baseline sm:justify-between">
-          <h3 className="text-xl/6 font-medium">
+          <h3 className="text-xl/6 font-medium sm:text-2xl/7">
             {experience.companyWebsite ? (
               <a
                 className="link"
@@ -49,7 +49,7 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
           </h3>
 
           {experience.location && experience.locationType && (
-            <dl className="flex min-w-0 items-center gap-1.5 text-sm whitespace-nowrap text-muted-foreground">
+            <dl className="flex min-w-0 items-center gap-1.5 text-sm whitespace-nowrap text-muted-foreground sm:text-[15px]">
               <dt className="sr-only">Location</dt>
               <dd className="truncate">{experience.location}</dd>
 

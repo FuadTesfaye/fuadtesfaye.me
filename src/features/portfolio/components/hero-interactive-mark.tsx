@@ -13,24 +13,25 @@ import {
 
 const springTransition: Transition = {
   type: "spring",
-  mass: 0.4,
-  damping: 16,
-  stiffness: 260,
+  mass: 0.35,
+  damping: 15,
+  stiffness: 280,
 }
 
 export function HeroInteractiveMark() {
   const id = useId()
   const hatchPatternId = `fuad-hatch-${id}`
+  const gridPatternId = `fuad-grid-${id}`
 
   const ref = useRef<SVGSVGElement>(null)
   const [play] = useSound(metalClickSound)
 
   return (
-    <div className="relative flex size-full items-center justify-center p-3 select-none sm:p-5">
+    <div className="relative flex size-full items-center justify-center p-2 select-none sm:p-4">
       <motion.svg
         ref={ref}
-        className="h-auto w-full max-w-[480px] cursor-pointer touch-manipulation overflow-visible [--stroke-hi:color-mix(in_oklab,var(--foreground)_55%,var(--background))] [--stroke:color-mix(in_oklab,var(--foreground)_18%,var(--background))]"
-        viewBox="0 0 520 320"
+        className="h-auto w-full max-w-full cursor-pointer touch-manipulation overflow-visible [--stroke-hi:color-mix(in_oklab,var(--foreground)_55%,var(--background))] [--stroke:color-mix(in_oklab,var(--foreground)_18%,var(--background))]"
+        viewBox="0 0 680 290"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         initial="normal"
@@ -38,98 +39,133 @@ export function HeroInteractiveMark() {
         onTap={() => play()}
       >
         <defs>
+          {/* Subtle millimeter CAD coordinate grid pattern */}
+          <pattern
+            id={gridPatternId}
+            width="20"
+            height="20"
+            patternUnits="userSpaceOnUse"
+          >
+            <path
+              d="M 20 0 L 0 0 0 20"
+              fill="none"
+              stroke="var(--stroke)"
+              strokeWidth="0.5"
+              strokeOpacity="0.25"
+            />
+          </pattern>
+
+          {/* Intricate Islamic 8-pointed star rosette mesh */}
           <pattern
             id={hatchPatternId}
             x="0"
             y="0"
-            width="24"
-            height="24"
+            width="28"
+            height="28"
             patternUnits="userSpaceOnUse"
           >
             <g
               fill="none"
               stroke="var(--stroke)"
               strokeWidth="0.75"
-              strokeOpacity="0.38"
+              strokeOpacity="0.4"
             >
-              {/* Center 8-pointed star */}
-              <rect x="7" y="7" width="10" height="10" />
+              {/* Primary 8-pointed star */}
+              <rect x="8" y="8" width="12" height="12" />
               <rect
-                x="7"
-                y="7"
-                width="10"
-                height="10"
-                transform="rotate(45 12 12)"
+                x="8"
+                y="8"
+                width="12"
+                height="12"
+                transform="rotate(45 14 14)"
               />
-              <circle cx="12" cy="12" r="2" />
-              {/* Corner quarter-stars */}
+              <circle cx="14" cy="14" r="2.5" />
+              {/* Corner rosettes */}
               <circle cx="0" cy="0" r="2" />
-              <circle cx="24" cy="0" r="2" />
-              <circle cx="24" cy="24" r="2" />
-              <circle cx="0" cy="24" r="2" />
-              {/* Interlacing connecting diagonals */}
-              <line x1="0" y1="0" x2="6" y2="6" />
-              <line x1="24" y1="0" x2="18" y2="6" />
-              <line x1="24" y1="24" x2="18" y2="18" />
-              <line x1="0" y1="24" x2="6" y2="18" />
+              <circle cx="28" cy="0" r="2" />
+              <circle cx="28" cy="28" r="2" />
+              <circle cx="0" cy="28" r="2" />
+              {/* Diagonal interlacing links */}
+              <line x1="0" y1="0" x2="8" y2="8" />
+              <line x1="28" y1="0" x2="20" y2="8" />
+              <line x1="28" y1="28" x2="20" y2="20" />
+              <line x1="0" y1="28" x2="8" y2="20" />
             </g>
           </pattern>
         </defs>
 
-        {/* Blueprint outer boundary & crosshair marks */}
+        {/* CAD Coordinate Grid Background */}
+        <rect
+          x="16"
+          y="16"
+          width="648"
+          height="258"
+          fill={`url(#${gridPatternId})`}
+          opacity="0.6"
+        />
+
+        {/* Blueprint outer boundary & crosshair frame */}
         <g
           stroke="var(--stroke)"
-          strokeWidth="1"
-          strokeDasharray="3 3"
-          opacity="0.4"
+          strokeWidth="0.8"
+          strokeDasharray="4 4"
+          opacity="0.5"
         >
-          <line x1="20" y1="20" x2="500" y2="20" />
-          <line x1="20" y1="300" x2="500" y2="300" />
-          <line x1="20" y1="20" x2="20" y2="300" />
-          <line x1="500" y1="20" x2="500" y2="300" />
+          <line x1="16" y1="16" x2="664" y2="16" />
+          <line x1="16" y1="274" x2="664" y2="274" />
+          <line x1="16" y1="16" x2="16" y2="274" />
+          <line x1="664" y1="16" x2="664" y2="274" />
         </g>
 
         {/* Corner alignment crosshairs */}
         <g stroke="var(--foreground)" strokeWidth="1" opacity="0.35">
-          <path d="M16 20h8M20 16v8" />
-          <path d="M496 20h8M500 16v8" />
-          <path d="M16 300h8M20 296v8" />
-          <path d="M496 300h8M500 296v8" />
+          <path d="M12 16h8M16 12v8" />
+          <path d="M660 16h8M664 12v8" />
+          <path d="M12 274h8M16 270v8" />
+          <path d="M660 274h8M664 270v8" />
         </g>
 
-        {/* Subtle architectural background watermark of Arabic calligraphy */}
+        {/* Subtle architectural background calligraphy watermark */}
         <text
-          x="260"
-          y="205"
+          x="340"
+          y="188"
           textAnchor="middle"
-          className="pointer-events-none fill-foreground/[0.035] font-arabic text-[180px] font-bold select-none dark:fill-foreground/4.5"
+          className="pointer-events-none fill-foreground/[0.035] font-arabic text-[190px] font-bold select-none dark:fill-foreground/4.5"
           aria-hidden
         >
           فُؤَيْد
         </text>
 
-        {/* Technical telemetry labels */}
+        {/* Top Technical Telemetry Readouts */}
         <text
           x="26"
-          y="36"
-          className="fill-muted-foreground/70 font-mono text-[9px] tracking-widest uppercase"
+          y="32"
+          className="fill-muted-foreground/75 font-mono text-[9px] tracking-widest uppercase"
         >
-          SYS // FU&apos;AYD (فُؤَيْد) • v2.6
+          SYS // CAD-SPEC • FU&apos;AYD (فُؤَيْد) • MK-VI
         </text>
         <text
-          x="494"
-          y="36"
-          textAnchor="end"
-          className="fill-muted-foreground/70 font-mono text-[9px] tracking-widest uppercase"
+          x="340"
+          y="32"
+          textAnchor="middle"
+          className="fill-muted-foreground/50 font-mono text-[8.5px] tracking-wider uppercase max-sm:hidden"
         >
-          {"ADDIS ABABA // 9°01'N 38°44'E"}
+          {"⊕ 09°01'48\"N  38°44'24\"E // ADDIS ABABA"}
+        </text>
+        <text
+          x="654"
+          y="32"
+          textAnchor="end"
+          className="fill-muted-foreground/75 font-mono text-[9px] tracking-widest uppercase"
+        >
+          TOLERANCE ±0.01mm // ACTIVE
         </text>
 
-        {/* Isometric 3D Base Pedestal */}
+        {/* Wide Isometric Base Pedestal (Fixed Deck) */}
         <g className="fill-card/40 stroke-line" strokeWidth="1.2">
-          {/* Base bottom drop shadow / floor outline */}
+          {/* Base footprint drop shadow */}
           <polygon
-            points="260,250 420,165 260,80 100,165"
+            points="340,230 610,150 340,70 70,150"
             fill="var(--background)"
             stroke="var(--stroke)"
             strokeDasharray="4 4"
@@ -138,116 +174,241 @@ export function HeroInteractiveMark() {
 
           {/* Left extrusion wall */}
           <polygon
-            points="100,165 260,250 260,270 100,185"
+            points="70,150 340,230 340,250 70,170"
             fill="color-mix(in oklab, var(--background) 90%, var(--foreground))"
             stroke="var(--stroke)"
           />
           {/* Right extrusion wall */}
           <polygon
-            points="260,250 420,165 420,185 260,270"
+            points="340,230 610,150 610,170 340,250"
             fill="color-mix(in oklab, var(--background) 82%, var(--foreground))"
             stroke="var(--stroke)"
           />
+
+          {/* Front lip illuminated optic status channel */}
+          <line
+            x1="74"
+            y1="168"
+            x2="340"
+            y2="248"
+            stroke="var(--foreground)"
+            strokeOpacity="0.15"
+            strokeWidth="1.5"
+          />
+          <line
+            x1="340"
+            y1="248"
+            x2="606"
+            y2="168"
+            stroke="var(--foreground)"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
         </g>
 
-        {/* Depressible Mechanical Keycap / Top Module */}
+        {/* Depressible Mechanical Wide Key Module / Actuator Deck */}
         <motion.g
           variants={{
-            normal: { y: 0 },
-            pressed: { y: 12 },
+            normal: { y: 0, scale: 1 },
+            pressed: { y: 9, scale: 0.992 },
           }}
           transition={springTransition}
+          style={{ transformOrigin: "340px 150px" }}
         >
-          {/* Keycap Left Extrusion */}
+          {/* Left Side Extrusion Skirt */}
           <polygon
-            points="120,154 260,230 260,248 120,172"
-            fill="color-mix(in oklab, var(--background) 85%, var(--foreground))"
+            points="95,140 340,212 340,228 95,156"
+            fill="color-mix(in oklab, var(--background) 86%, var(--foreground))"
             stroke="var(--stroke)"
-            strokeWidth="1.5"
+            strokeWidth="1.4"
           />
 
-          {/* Keycap Right Extrusion */}
+          {/* Right Side Extrusion Skirt */}
           <polygon
-            points="260,230 400,154 400,172 260,248"
+            points="340,212 585,140 585,156 340,228"
             fill="color-mix(in oklab, var(--background) 78%, var(--foreground))"
             stroke="var(--stroke)"
-            strokeWidth="1.5"
+            strokeWidth="1.4"
           />
 
-          {/* Keycap Top Face */}
+          {/* Main Wide Top Face (490px wide!) */}
           <polygon
-            points="260,78 400,154 260,230 120,154"
+            points="340,68 585,140 340,212 95,140"
             fill="var(--card)"
             stroke="var(--stroke)"
             strokeWidth="1.5"
           />
 
-          {/* Diagonal hatch on top face */}
+          {/* Geometric Girih Rosette Pattern on Top Face */}
           <polygon
-            points="260,78 400,154 260,230 120,154"
+            points="340,68 585,140 340,212 95,140"
             fill={`url(#${hatchPatternId})`}
-            opacity="0.5"
+            opacity="0.45"
           />
 
-          {/* Inner bezel accent diamond */}
+          {/* Inner Chamfer Bezel Outline */}
           <polygon
-            points="260,94 378,154 260,214 142,154"
+            points="340,82 562,140 340,198 118,140"
             fill="none"
             stroke="var(--stroke)"
             strokeWidth="0.8"
-            strokeDasharray="2 2"
-            opacity="0.7"
+            strokeDasharray="2.5 2.5"
+            opacity="0.75"
           />
 
-          {/* Center Brand Emblem: Arabic Calligraphy Fuayd (فُؤَيْد) - Solid vector */}
+          {/* Left Wing: Tactile Machined Grooves & Calibration Gauge */}
+          <g stroke="var(--stroke-hi)" strokeWidth="0.7" opacity="0.6">
+            <line x1="140" y1="135" x2="200" y2="152" />
+            <line x1="146" y1="130" x2="206" y2="147" />
+            <line x1="152" y1="125" x2="212" y2="142" />
+            <line x1="158" y1="120" x2="218" y2="137" />
+          </g>
+
           <g className="pointer-events-none select-none">
+            {/* Left Wing Technical Inscription */}
             <text
-              x="260"
-              y="166"
+              x="170"
+              y="112"
+              className="fill-muted-foreground/75 font-mono text-[8px] tracking-wider uppercase"
+            >
+              ACTUATOR // 45 cN
+            </text>
+            <text
+              x="170"
+              y="122"
+              className="fill-muted-foreground/50 font-mono text-[7.5px] tracking-widest uppercase"
+            >
+              SPRING: CuBe • DUAL-STAGE
+            </text>
+
+            {/* Right Wing Technical Inscription */}
+            <text
+              x="510"
+              y="112"
+              textAnchor="end"
+              className="fill-muted-foreground/75 font-mono text-[8px] tracking-wider uppercase"
+            >
+              ITQĀN // إتقان (MASTERY)
+            </text>
+            <text
+              x="510"
+              y="122"
+              textAnchor="end"
+              className="fill-muted-foreground/50 font-mono text-[7.5px] tracking-widest uppercase"
+            >
+              {"DATUM [A-1] • SPEC 2026"}
+            </text>
+          </g>
+
+          {/* Right Wing: Metric Stepper / Bargraph */}
+          <g stroke="var(--stroke-hi)" strokeWidth="0.7" opacity="0.6">
+            <line x1="480" y1="152" x2="540" y2="135" />
+            <line x1="474" y1="147" x2="534" y2="130" />
+            <line x1="468" y1="142" x2="528" y2="125" />
+            <line x1="462" y1="137" x2="522" y2="120" />
+          </g>
+
+          {/* Center Brand Medallion: Geometric Octagon & Sculpted Arabic Calligraphy */}
+          <g className="pointer-events-none select-none">
+            {/* Medallion outer ring */}
+            <circle
+              cx="340"
+              cy="140"
+              r="40"
+              fill="var(--background)"
+              stroke="var(--stroke)"
+              strokeWidth="1.2"
+              className="fill-background/80 backdrop-blur-xs"
+            />
+            {/* Concentric 8-point geometric star ring */}
+            <rect
+              x="315"
+              y="115"
+              width="50"
+              height="50"
+              fill="none"
+              stroke="var(--stroke)"
+              strokeWidth="0.75"
+              strokeDasharray="2 2"
+              opacity="0.8"
+            />
+            <rect
+              x="315"
+              y="115"
+              width="50"
+              height="50"
+              fill="none"
+              stroke="var(--stroke)"
+              strokeWidth="0.75"
+              strokeDasharray="2 2"
+              transform="rotate(45 340 140)"
+              opacity="0.8"
+            />
+
+            {/* Sculpted Arabic Calligraphy: Fu'ayd (فُؤَيْد) */}
+            <text
+              x="340"
+              y="152"
               textAnchor="middle"
-              className="fill-foreground font-arabic text-[50px] font-bold tracking-normal select-none"
+              className="fill-foreground font-arabic text-[44px] font-bold tracking-normal select-none"
             >
               فُؤَيْد
             </text>
             <text
-              x="260"
-              y="186"
+              x="340"
+              y="170"
               textAnchor="middle"
-              className="fill-muted-foreground/80 font-mono text-[9px] tracking-[0.22em] uppercase select-none"
+              className="fill-muted-foreground/80 font-mono text-[8px] font-medium tracking-[0.22em] uppercase select-none"
             >
               {"FU'AYD // HEART & INTELLECT"}
             </text>
           </g>
 
-          {/* Pure hairline wireframe rim bevel */}
+          {/* Anodized Bevel Rim Highlight */}
           <polygon
-            points="260,78 400,154 260,230 120,154"
+            points="340,68 585,140 340,212 95,140"
             fill="none"
             stroke="var(--foreground)"
-            strokeOpacity="0.3"
+            strokeOpacity="0.28"
             strokeWidth="1.2"
           />
         </motion.g>
 
-        {/* Fig 1.0 notation */}
+        {/* Bottom Dimension Span Callout Line */}
+        <g stroke="var(--stroke)" strokeWidth="0.75" opacity="0.45">
+          <line x1="95" y1="262" x2="585" y2="262" />
+          <path d="M95 258v8M585 258v8M340 259v6" />
+        </g>
         <text
-          x="494"
-          y="288"
-          textAnchor="end"
-          className="fill-muted-foreground/60 font-mono text-[10px] tracking-wider"
+          x="340"
+          y="272"
+          textAnchor="middle"
+          className="fill-muted-foreground/60 font-mono text-[8px] tracking-widest uppercase select-none"
         >
-          FIG. 1.0 // ITQĀN (إتقان) TACTILE SWITCH
+          {"|◄—————— SPAN: 490.00 mm (PRECISION TACTILE APERTURE) ——————►|"}
+        </text>
+
+        {/* Lower Right Figure Caption */}
+        <text
+          x="654"
+          y="262"
+          textAnchor="end"
+          className="fill-muted-foreground/60 font-mono text-[9px] tracking-wider uppercase select-none max-sm:hidden"
+        >
+          FIG. 1.0 // ITQĀN (إتقان) WIDE SWITCH
         </text>
       </motion.svg>
 
       {/* Cursive annotation pointing to the switch */}
       <HandwrittenNote
-        className="right-4 bottom-3 hidden w-36 flex-col items-end pointer-fine:md:flex"
+        className="right-3 bottom-2 hidden w-36 flex-col items-end pointer-fine:md:flex"
         aria-hidden
       >
-        <span className="-rotate-6 font-cursive text-3xl text-muted-foreground">
+        <span className="-rotate-6 font-cursive text-2xl text-muted-foreground sm:text-3xl">
           tactile switch
-          <span className="block text-xl opacity-85">click for sound</span>
+          <span className="block text-lg opacity-85 sm:text-xl">
+            click for sound
+          </span>
         </span>
         <HandwrittenArrow className="translate-x-2 -scale-x-100 -rotate-12" />
       </HandwrittenNote>

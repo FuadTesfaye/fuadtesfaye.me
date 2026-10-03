@@ -3,5 +3,5 @@ export default function PagesLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <div className="mx-auto border-x pt-12 md:max-w-4xl">{children}</div>
+  return <div className="mx-auto border-x pt-12 md:max-w-5xl">{children}</div>
 }

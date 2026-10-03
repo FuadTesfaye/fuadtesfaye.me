@@ -8,9 +8,15 @@ const ID = "stack"
 export function TechStack() {
   return (
     <Panel id={ID}>
-      <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-1.5 font-mono text-[9px] tracking-widest text-muted-foreground uppercase">
+      <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-2 font-mono text-[10px] tracking-widest text-muted-foreground uppercase sm:text-[11px]">
         <span>SECTION // 04</span>
-        <span>كفاءة • TECHNICAL ARSENAL</span>
+        <span className="flex items-center gap-1.5">
+          <span className="font-arabic text-xs font-bold text-foreground/80">
+            كفاءة
+          </span>
+          <span className="text-muted-foreground/40">•</span>
+          <span>TECHNICAL ARSENAL</span>
+        </span>
         <span>SPEC SHEET // 2026</span>
       </div>
 
@@ -39,7 +45,10 @@ export function TechStack() {
                 key={category}
                 className="grid items-start gap-y-2 border-b border-line py-4 last:border-none sm:grid-cols-[var(--col-left-width)_1fr]"
               >
-                <div id={categoryId} className="pl-4 text-sm/(--badge-height)">
+                <div
+                  id={categoryId}
+                  className="pl-4 text-sm/(--badge-height) sm:text-[15px]"
+                >
                   <span
                     className="mr-1.5 font-mono text-muted-foreground/80 select-none"
                     aria-hidden

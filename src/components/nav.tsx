@@ -113,7 +113,7 @@ export function Nav({
             onMouseEnter={() => setHoveredIndex(index)}
             onClick={handleClick}
             className={cn(
-              "group relative flex items-center gap-1.5 rounded-none px-2.5 py-1 text-xs transition-colors outline-none",
+              "group relative flex items-center gap-1.5 rounded-none px-3 py-1 text-xs transition-colors outline-none sm:text-[13px]",
               isActive
                 ? "font-semibold text-foreground"
                 : "text-muted-foreground hover:text-foreground"
@@ -137,10 +137,10 @@ export function Nav({
               />
             )}
 
-            <span className="relative z-1 font-mono text-[9px] text-muted-foreground/50 transition-colors group-hover:text-muted-foreground">
+            <span className="relative z-1 font-mono text-[10px] text-muted-foreground/50 transition-colors group-hover:text-muted-foreground">
               {indexStr}
             </span>
-            <span className="relative z-1 font-heading text-xs tracking-wider uppercase">
+            <span className="relative z-1 font-heading text-xs tracking-wider uppercase sm:text-[13px]">
               {title}
             </span>
           </Link>

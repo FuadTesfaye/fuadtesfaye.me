@@ -43,7 +43,7 @@ export default function HomePage() {
       {CARBON_ADS && <FloatingCarbonAds />}
 
       <div className="[--separator-height:--spacing(10)] **:data-[slot=panel]:scroll-mt-[calc(var(--header-height)+var(--separator-height))]">
-        <div className="mx-auto md:max-w-4xl">
+        <div className="mx-auto md:max-w-5xl">
           <ProfileHeader />
           <Separator pattern="girih" arabic="فُؤَيْد" latin="DOSSIER" />
 
@@ -152,13 +152,13 @@ function Separator({
     >
       {/* Precision corner crosshair datum marks */}
       <div
-        className="pointer-events-none absolute -top-1.5 -left-1.5 z-2 flex size-3 items-center justify-center font-mono text-[9px] text-muted-foreground/45 select-none"
+        className="pointer-events-none absolute -top-1.5 -left-1.5 z-2 flex size-3 items-center justify-center font-mono text-[10px] text-muted-foreground/45 select-none"
         aria-hidden
       >
         +
       </div>
       <div
-        className="pointer-events-none absolute -top-1.5 -right-1.5 z-2 flex size-3 items-center justify-center font-mono text-[9px] text-muted-foreground/45 select-none"
+        className="pointer-events-none absolute -top-1.5 -right-1.5 z-2 flex size-3 items-center justify-center font-mono text-[10px] text-muted-foreground/45 select-none"
         aria-hidden
       >
         +
@@ -166,20 +166,20 @@ function Separator({
 
       {/* Architectural center seal / medallion */}
       {arabic && (
-        <div className="z-1 flex items-center gap-2 border border-line bg-background/95 px-3 py-0.5 shadow-2xs backdrop-blur-xs select-none">
-          <ArabicStar className="size-3 text-muted-foreground/80" />
-          <span className="font-arabic text-xs font-bold tracking-normal text-foreground/90">
+        <div className="z-1 flex items-center gap-2 border border-line bg-background/95 px-3.5 py-1 shadow-2xs backdrop-blur-xs select-none">
+          <ArabicStar className="size-3.5 text-muted-foreground/80" />
+          <span className="font-arabic text-sm font-bold tracking-normal text-foreground/90">
             {arabic}
           </span>
           {latin && (
             <>
               <span className="text-[10px] text-muted-foreground/40">•</span>
-              <span className="font-mono text-[9px] font-medium tracking-widest text-muted-foreground uppercase">
+              <span className="font-mono text-[10px] font-medium tracking-widest text-muted-foreground uppercase sm:text-[11px]">
                 {latin}
               </span>
             </>
           )}
-          <ArabicStar className="size-3 text-muted-foreground/50" />
+          <ArabicStar className="size-3.5 text-muted-foreground/50" />
         </div>
       )}
     </div>

@@ -47,16 +47,16 @@ export function SiteFooterCad() {
 
   return (
     <footer className="max-w-screen overflow-x-clip px-2">
-      <div className="mx-auto border-x group-has-data-[slot=layout-wide]/layout:container md:max-w-4xl">
+      <div className="mx-auto border-x group-has-data-[slot=layout-wide]/layout:container md:max-w-5xl">
         <div className="screen-line-top screen-line-bottom screen-line-top-border before:z-1">
           <div className="stripe-divider-frieze relative flex h-12 items-center justify-center">
-            <div className="z-1 flex items-center gap-2 border border-line bg-background/95 px-3 py-1 shadow-2xs backdrop-blur-xs select-none">
+            <div className="z-1 flex items-center gap-2 border border-line bg-background/95 px-3.5 py-1 shadow-2xs backdrop-blur-xs select-none">
               <ArabicStar className="size-3.5 text-muted-foreground/80" />
-              <span className="font-arabic text-xs font-bold tracking-normal text-foreground/90">
+              <span className="font-arabic text-sm font-bold tracking-normal text-foreground/90">
                 خاتمة
               </span>
               <span className="text-[10px] text-muted-foreground/40">•</span>
-              <span className="font-mono text-[9px] font-medium tracking-widest text-muted-foreground uppercase">
+              <span className="font-mono text-[10px] font-medium tracking-widest text-muted-foreground uppercase sm:text-[11px]">
                 COLOPHON // 2026
               </span>
               <ArabicStar className="size-3.5 text-muted-foreground/50" />
@@ -65,7 +65,7 @@ export function SiteFooterCad() {
         </div>
 
         <div className="relative">
-          <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-1.5 font-mono text-[9px] tracking-widest text-muted-foreground uppercase">
+          <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-2 font-mono text-[10px] tracking-widest text-muted-foreground uppercase sm:text-[11px]">
             <span>COLOPHON // 2026</span>
             <span>خاتمة • ARCHITECTURAL SPECIFICATION</span>
             <span>fuadtesfaye.me</span>
@@ -333,10 +333,10 @@ function Field({
         className
       )}
     >
-      <dt className="text-[0.625rem]/4 font-medium tracking-wider text-muted-foreground uppercase">
+      <dt className="text-[11px]/4 font-medium tracking-wider text-muted-foreground uppercase">
         {label}
       </dt>
-      <dd className="text-sm">{children}</dd>
+      <dd className="text-sm sm:text-[15px]">{children}</dd>
     </div>
   )
 }

@@ -43,7 +43,7 @@ export function ExperiencePositionItem({
           "data-disabled:before:content-none"
         )}
       >
-        <div className="relative z-1 mb-1 flex items-start gap-3 text-base">
+        <div className="relative z-1 mb-1 flex items-start gap-3 text-base sm:text-lg">
           <IconTile>{position.icon ?? <BriefcaseBusinessIcon />}</IconTile>
 
           <h4 className="flex-1 font-medium text-balance">{position.title}</h4>
@@ -54,7 +54,7 @@ export function ExperiencePositionItem({
         </div>
 
         {/* Separators are aria-hidden: a dl may only expose dt/dd groups, and these dividers are decorative. */}
-        <dl className="flex flex-wrap items-center gap-x-2 gap-y-0.5 pl-9 text-sm text-muted-foreground">
+        <dl className="flex flex-wrap items-center gap-x-2 gap-y-0.5 pl-9 text-sm text-muted-foreground sm:text-[15px]">
           {position.employmentType && (
             <>
               <div>

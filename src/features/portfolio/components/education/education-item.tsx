@@ -37,7 +37,7 @@ export function EducationItem({ item }: { item: Education }) {
             "data-disabled:before:content-none"
           )}
         >
-          <div className="relative z-1 mb-1 flex items-start gap-3 text-base">
+          <div className="relative z-1 mb-1 flex items-start gap-3 text-base sm:text-lg">
             <IconTile>
               <GraduationCapIcon />
             </IconTile>
@@ -49,7 +49,7 @@ export function EducationItem({ item }: { item: Education }) {
             </div>
           </div>
 
-          <dl className="flex flex-wrap items-center gap-x-2 pl-9 text-sm text-muted-foreground">
+          <dl className="flex flex-wrap items-center gap-x-2 pl-9 text-sm text-muted-foreground sm:text-[15px]">
             <div>
               <dt className="sr-only">Study period</dt>
               <dd className="flex items-center gap-0.5 tabular-nums">

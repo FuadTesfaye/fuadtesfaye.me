@@ -43,14 +43,14 @@ export function ProjectItem({
 
         <div className="flex flex-1 items-center gap-2 border-l border-dashed border-line p-3 sm:p-4">
           <div className="flex-1">
-            <h3 className="mb-1 leading-snug font-medium text-balance">
+            <h3 className="mb-1 text-base/snug font-medium text-balance sm:text-[17px]/snug">
               <CollapsibleTrigger className="text-left">
                 <span className="absolute inset-0" aria-hidden />
                 {project.title}
               </CollapsibleTrigger>
             </h3>
 
-            <dl className="text-sm text-muted-foreground">
+            <dl className="text-sm text-muted-foreground sm:text-[15px]">
               <dt className="sr-only">Period</dt>
               <dd className="flex items-center gap-0.5">
                 <span>{start}</span>

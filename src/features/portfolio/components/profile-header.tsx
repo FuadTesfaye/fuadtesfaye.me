@@ -11,16 +11,16 @@ export function ProfileHeader() {
   return (
     <div className="screen-line-bottom grid grid-cols-[1fr_auto] grid-rows-[auto_1fr_auto] overflow-y-clip border-x screen-line-bottom-border after:z-1">
       {/* Top Architectural Dossier Header Ribbon */}
-      <div className="col-span-2 flex flex-wrap items-center justify-between gap-2 border-b border-line bg-muted/20 px-3 py-1.5 font-mono text-[9px] tracking-wider text-muted-foreground uppercase min-[380px]:px-4">
+      <div className="col-span-2 flex flex-wrap items-center justify-between gap-2 border-b border-line bg-muted/20 px-3 py-2 font-mono text-[10px] tracking-wider text-muted-foreground uppercase min-[380px]:px-4 sm:text-[11px]">
         <span className="flex items-center gap-1.5 font-medium text-foreground/80">
-          <ArabicStar className="size-2.5 text-muted-foreground/70" />
+          <ArabicStar className="size-3 text-muted-foreground/70" />
           DOSSIER // FU&apos;AYD
         </span>
         <span className="hidden min-[480px]:inline">
           ADDIS ABABA (9°01&apos;N 38°44&apos;E) • GMT+3
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="font-arabic font-bold text-foreground/80">
+          <span className="font-arabic text-xs font-bold text-foreground/80">
             سِجِلّ
           </span>
           <span className="text-muted-foreground/40">•</span>
@@ -37,12 +37,12 @@ export function ProfileHeader() {
         <div className="z-1 mt-auto border-line sm:border-t">
           <div className="flex -translate-x-px flex-wrap items-baseline gap-x-3 gap-y-1 pt-3 pr-2 pl-3 min-[380px]:pl-4">
             <div className="flex items-center gap-1.5 min-[380px]:gap-2">
-              <h1 className="-translate-y-px font-name text-[1.65rem] font-normal tracking-wide min-[360px]:text-[1.85rem] min-[420px]:text-[2.1rem]/none">
+              <h1 className="-translate-y-px font-name text-2xl font-normal tracking-wide min-[360px]:text-[1.95rem] min-[420px]:text-[2.35rem]/none sm:text-[2.5rem]/none">
                 {USER.displayName}
               </h1>
 
               <VerifiedIcon
-                className="size-4 shrink-0 select-none min-[380px]:size-4.5"
+                className="size-4.5 shrink-0 select-none min-[380px]:size-5"
                 aria-hidden
               />
 
@@ -55,14 +55,14 @@ export function ProfileHeader() {
 
             {/* Arabic signature seal inline */}
             <span
-              className="font-arabic text-xl font-bold tracking-normal text-muted-foreground/80 select-none min-[380px]:text-2xl"
+              className="font-arabic text-2xl font-bold tracking-normal text-muted-foreground/80 select-none min-[380px]:text-3xl"
               title="Fu'ayd in Arabic"
             >
               فُؤَيْد
             </span>
           </div>
 
-          <div className="px-3 pt-1 pb-2 font-mono text-[11px] text-muted-foreground min-[380px]:px-4">
+          <div className="px-3 pt-1.5 pb-2 font-mono text-xs text-muted-foreground min-[380px]:px-4 sm:text-[13px]">
             <span className="font-medium text-foreground/90">
               Chief Technology Officer
             </span>{" "}

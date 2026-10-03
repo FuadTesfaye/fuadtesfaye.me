@@ -54,14 +54,14 @@ export function SocialLinks() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-2 border border-line bg-muted/20 px-3 py-1 font-mono text-[9px] tracking-widest text-muted-foreground select-none sm:flex">
-          <ArabicStar className="size-3 text-muted-foreground/70" />
-          <span className="font-arabic text-xs font-bold text-foreground/85">
+        <div className="hidden items-center gap-2 border border-line bg-muted/20 px-3.5 py-1.5 font-mono text-[10px] tracking-widest text-muted-foreground select-none sm:flex sm:text-[11px]">
+          <ArabicStar className="size-3.5 text-muted-foreground/70" />
+          <span className="font-arabic text-sm font-bold text-foreground/85">
             تَواصُل
           </span>
           <span className="text-muted-foreground/40">•</span>
           <span className="uppercase">NETWORK // ACTIVE</span>
-          <ArabicStar className="size-3 text-muted-foreground/50" />
+          <ArabicStar className="size-3.5 text-muted-foreground/50" />
         </div>
       </PanelContent>
 

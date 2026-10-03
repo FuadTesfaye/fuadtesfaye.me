@@ -23,9 +23,15 @@ const MAX = 3
 export function Experiences() {
   return (
     <Panel id={ID}>
-      <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-1.5 font-mono text-[9px] tracking-widest text-muted-foreground uppercase">
+      <div className="flex items-center justify-between border-b border-line bg-muted/20 px-4 py-2 font-mono text-[10px] tracking-widest text-muted-foreground uppercase sm:text-[11px]">
         <span>SECTION // 05</span>
-        <span>مسيرة • CAREER CHRONOLOGY</span>
+        <span className="flex items-center gap-1.5">
+          <span className="font-arabic text-xs font-bold text-foreground/80">
+            مسيرة
+          </span>
+          <span className="text-muted-foreground/40">•</span>
+          <span>CAREER CHRONOLOGY</span>
+        </span>
         <span>INDEX // {EXPERIENCES.length} APPOINTMENTS</span>
       </div>
 

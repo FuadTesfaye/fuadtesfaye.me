@@ -10,12 +10,12 @@ export function SiteFooter() {
 
   return (
     <footer className="max-w-screen overflow-x-clip px-2">
-      <div className="mx-auto border-x border-line group-has-data-[slot=layout-wide]/layout:container md:max-w-4xl">
+      <div className="mx-auto border-x border-line group-has-data-[slot=layout-wide]/layout:container md:max-w-5xl">
         <div className="screen-line-top screen-line-bottom">
           <div className="stripe-divider-frieze h-12" />
         </div>
 
-        <dl className="flex flex-col gap-4 py-8 font-mono [&_dd]:text-sm [&_dt]:text-right [&_dt]:text-sm [&_dt]:text-muted-foreground [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-2">
+        <dl className="flex flex-col gap-4 py-8 font-mono [&_dd]:text-[15px] [&_dt]:text-right [&_dt]:text-[15px] [&_dt]:text-muted-foreground [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-2">
           <Item>
             <dt>Crafted by</dt>
             <dd>
